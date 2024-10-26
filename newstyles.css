@@ -39,7 +39,7 @@ body{
     /* grid-area: "header"; */
     border:0 solid rgba(255, 255, 255, 0.432);
     background-color: rgba(91, 87, 130, 0.43);
-    padding: 5px;
+    padding: 5px 5px 5px 200px;
 }
 
 
