@@ -37,7 +37,7 @@ body{
     text-align: center;
     color: rgb(255, 255, 255);
     /* grid-area: "header"; */
-    border:0 solid rgba(255, 255, 255, 0.432);
+    border:0 solid rgb(255, 255, 255);
     background-color: rgba(91, 87, 130, 0.43);
     padding: 5px 5px 5px 200px;
 }
@@ -47,7 +47,7 @@ body{
     margin: 1px;
     padding: 1px;
     width: 240px;
-    background: #06021670;
+    background: #625a72;
     position: fixed;
     height: 100%;
     
@@ -175,11 +175,11 @@ line-height: 50px;
     font-weight: 600;
 }/*  Sidebar links background etc */
 .sidebar .nav-links{
-    background: rgba(128, 128, 128, 0.71);
+    background: rgb(128, 128, 128);
     height: 100%;
     padding-top: 30px;
-    opacity: 90%;
     justify-content: space-between;
+   
     
     
 }
@@ -187,6 +187,7 @@ line-height: 50px;
     position: relative;
     list-style: none;
     transition: all 0.3s ease;
+    
     
 }
 .sidebar .nav-links li:hover{
@@ -196,6 +197,7 @@ line-height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
     
 }
 .sidebar .nav-links li i{
@@ -208,6 +210,7 @@ line-height: 50px;
 }
 .sidebar .nav-links li.showMenu i.arrow{
     transform: rotate(-180deg);
+    transition: all 0.5s ease;
 }
 .sidebar .nav-links li a{
     display: flex;
