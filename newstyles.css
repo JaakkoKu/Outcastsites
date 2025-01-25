@@ -14,7 +14,6 @@ body, h1, p, ul, li{
 }
 body{
     height:auto;
-    background-color:black;
     background-image: url("screenshots/avatar.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -35,10 +34,10 @@ body{
     margin: 1px;
     padding: 1px;
     width: 240px;
-    background: #4c4755;
     position: fixed;
     height: 100vh;
     top: 50px;
+    border-radius: 20px;
 }
 .logo-details{
 height: 60px;
@@ -168,6 +167,7 @@ background: white;
     height: 100%;
     padding-top: 30px;
     justify-content: space-between;
+    border-radius: 20px;
 }
 .sidebar .nav-links li{
     position: relative;
@@ -235,7 +235,7 @@ opacity: 90;
     padding: 10px 20px;
     border-radius: 0 6px 6px 0;
     transition: all 0.3s ease;
-    opacity: 0%;
+    opacity: 0;
     pointer-events: none;
 }
 .sidebar .nav-links li:hover .sub-menu{
@@ -466,12 +466,24 @@ max-height: 1000px;
     .sidebar .nav-links i.arrow{
         opacity: 0;
     }
-    .sidebar.close .nav-links li .sub-menu{
+    /* .sidebar.close .nav-links li .sub-menu{
         position: absolute;
         pointer-events: none;
         width: 100%;
         height: 100%;
         display: none;
         
+    } */
+    .sidebar.close .nav-links li .sub-menu{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 100%;
+        top: 0;
+        padding: 10px 20px;
+        border-radius: 0 6px 6px 0;
+        transition: all 0.3s ease;
+        opacity: 1;
     }
+    
 }
