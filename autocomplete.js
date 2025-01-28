@@ -50,4 +50,5 @@ function showSuggestions(list){
         listData= list.join('');
     }
     suggBox.innerHTML = listData;
+    
 }

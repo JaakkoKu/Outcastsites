@@ -31,7 +31,7 @@ body{
     color: white;
     background-color: rgba(91, 87, 130, 0.43);
     padding: 10px;
-    margin-left: 10%;
+    
 }
 .sidebar{
     margin: 1px;
@@ -51,12 +51,13 @@ body{
     top: 0;
     display: flex;
     flex-direction: row;
-    left: 0;
+    left: 0;    
 }
 .logo-details img{
     height: 30px;
     width: 30px;
     margin-left: 5px;
+    
 }
     .logo-details img:hover{
         transform: scale(1.3);
@@ -77,19 +78,23 @@ body{
 }
 /* Basic styles for the search box container */
 .sidebar .wrapper{
-    max-width: 350px;
+    width: max-content;
+    display: flex;
+    align-items: center;
     margin:  auto;
 } 
 /* alastulobaarin taustanäkymä*/
 .sidebar ul .wrapper .search-input{
     position: relative;
     height: 100%;
-    width: 90%;
+    width: 80%;
+    font-size: 16px;
+    margin-left: var(--padding);
 }
 
 .sidebar .wrapper .search-input{
     position: relative;
-    width: 80%;
+   
     box-shadow: 1px 5px 5px 1px black;
     background: white;
     border-radius: 16px;
@@ -321,6 +326,9 @@ color:white;
     box-shadow: 0 0 10px rgb(158, 21, 21);
     max-width: 1100px;
     height: 100%;
+    margin: 30px;
+    justify-items: center;
+    justify-self: center;
 }
 
 .container .newsbox p{
@@ -359,8 +367,11 @@ color:white;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(158, 21, 21);
     max-width: 1100px;
+    align-self: center;
+    justify-items: center;
+    margin: auto;
 }
 .container .box1 img{
 max-width: 1000px;
@@ -378,12 +389,17 @@ max-height: 1000px;
 }
 
 /*-------------------------------------------------- Media stuff for phones ----------------------------------- */
+@media only screen and (max-width: 1078px){
+    .logo-details{
+       left: -1000px;
+    }
+}
 @media only screen and (max-width: 768px){
     .logo-details{
        left: -1000px;
     }
     body{
-        background-size: cover;
+        background-size: 100% 100%;
     }
     .header {
         font-size: 1.5rem;
@@ -403,11 +419,6 @@ max-height: 1000px;
         width: 100%;
         margin: 10px 0;
         position: relative; 
-    }
-    .sidebar ul.nav-links .iocn-links{
-        justify-content: center;
-        text-align: center;
-        align-items: center;
     }
     .sidebar .nav-links{
         background: rgb(128, 128, 128);
@@ -438,7 +449,7 @@ max-height: 1000px;
     }
     .sidebar .nav-links li .sub-menu a:hover{
         opacity: 1;
-        overflow:auto;
+        
 }
     .menu_icon_box {
         position: fixed;
@@ -483,13 +494,7 @@ max-height: 1000px;
     }
     .newsbox{
         max-width: 400px;
+        max-height: 100%;
     }    
-    .newsbox {
-        max-width: 100%;
-        padding: 10px;
-    }
 
-    .newsbox h1, .newsbox h2, .newsbox p {
-        font-size: 0.9rem;
-}
 }
