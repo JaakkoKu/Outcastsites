@@ -22,13 +22,16 @@ body{
     display :flex;
     flex-direction: column;
 }
+#mini{
+    opacity: 0;
+}
 .header{
-    font-size: 50px;
+    font-size: 2rem;
     text-align: center;
-    color: rgb(255, 255, 255);
-    border:0 solid rgb(255, 255, 255);
+    color: white;
     background-color: rgba(91, 87, 130, 0.43);
-    padding: 5px 5px 5px 200px;
+    padding: 10px;
+    margin-left: 10%;
 }
 .sidebar{
     margin: 1px;
@@ -38,37 +41,40 @@ body{
     height: 100vh;
     top: 50px;
     border-radius: 20px;
+   
 }
 .logo-details{
-height: 60px;
-width: 100%;
-position: absolute;
-align-items: center;
-top: 0;
-display: flex;
-flex-direction: row;
-left: 0;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    left: 0;
 }
 .logo-details img{
     height: 30px;
     width: 30px;
-    }
+    margin-left: 5px;
+}
     .logo-details img:hover{
         transform: scale(1.3);
         transition: 0.3s;
-    }
+}
     .logo-details .logo_name{
         font-size: 22px;
         color: #fff;
         font-weight: 600;
-    }
+        margin-left: 15px;
+}
     .logo_content a{
         text-decoration: none;
-    }
+}
     .logo-details .logo_content:hover{
-        transform: scale(1.3);
+        transform: scale(1.1);
         transition: 0.2s;
-    }
+}
 /* Basic styles for the search box container */
 .sidebar .wrapper{
     max-width: 350px;
@@ -96,7 +102,6 @@ left: 0;
     color: white;
     font-weight: 400;
     font-size: 18px;
-    
 }
 
 .sidebar .search-input input {
@@ -129,7 +134,6 @@ left: 0;
     opacity: 0;
     pointer-events: none;
     font-size: 18px;
-       
 }
 .search-input.active .autocom-box{
     padding: 10px 8px;
@@ -139,7 +143,6 @@ left: 0;
     background: white;
     width: 215px;
     border-radius: 16px;
-    
 }
 .autocom-box li {
     list-style: none;
@@ -148,18 +151,13 @@ left: 0;
     cursor: default;
     border-radius: 3px;
     display: none;
-    
-
 }
 .search-input.active .autocom-box li{
     display: block;
 }
-
 .autocom-box li:hover{
 background: white;
 }
-
-
 
 /*  Sidebar links background etc */
 .sidebar .nav-links{
@@ -212,7 +210,6 @@ color:#fff;
     margin-top: -10px;
     background: rgb(128, 128, 128);
 }
-
 .sidebar .nav-links li .sub-menu a{
     color: #fff;
     font-size: 17px;
@@ -220,13 +217,10 @@ color:#fff;
     opacity: 1;
     white-space: nowrap;
     transition: all 0.3s ease;
-    
 }
 .sidebar .nav-links li .sub-menu a:hover{
-opacity: 90;
-
+opacity: 1;
 }
-   
 .sidebar.close .nav-links li .sub-menu{
     position: absolute;
     left: 100%;
@@ -312,6 +306,7 @@ color:white;
 } */
 .container{
     display: flex;
+    flex-direction: column;
     flex: 1;
     justify-content: center;
     padding: 15px 15px 15px 250px;
@@ -319,23 +314,28 @@ color:white;
     
     
 }
-.box{
+.box, .newsbox{
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(158, 21, 21);
     max-width: 1100px;
     height: 100%;
 }
 
-.box p{
+.container .newsbox p{
     font-size: 18px;
     font-weight: 400;
     padding: 5px;
     text-align: center;
 }
-.box h1, h2{
+.box, h1, h2{
     text-align: center;
+}
+.container .newsbox img{
+    justify-content: space-between;
+    align-items: center;
+    
 }
 .container .box img{
     max-width: 500px;
@@ -343,22 +343,17 @@ color:white;
     text-align: center;
     margin: 0 auto;
 }
-.container .box img:hover{
+
+.container .newsbox img:hover{
     transform: scale(1.3);
     transition: 0.2s;
 }
-
-.box img{
-    align-items: center;
-    justify-content: center;
-    
-}
-.box a img{
+.newsbox a img{
     width:40px;
     height:40px;
-    margin:5px;
-    
-    
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 30px;
 }
 .box1{
     background-color: rgb(255, 255, 255);
@@ -381,24 +376,33 @@ max-height: 1000px;
     padding: 5px;
     text-align: center;
 }
+
+/*-------------------------------------------------- Media stuff for phones ----------------------------------- */
 @media only screen and (max-width: 768px){
     .logo-details{
-        opacity: 0;
+       left: -1000px;
     }
-    .sidebar{
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
+    body{
+        background-size: cover;
+    }
+    .header {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+    .sidebar {
         position: fixed;
-        display: flex;
-        left: -1000px;
-        pointer-events: none;
-        overflow-y: scroll;
-        scrollbar-color: rgb(87, 84, 84) black;
-        scrollbar-width: thin;
-        top:0;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: auto;
+        transition: 1s;
+        z-index: 1;
+        padding-top: 10px;        
+    }
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+        position: relative; 
     }
     .sidebar ul.nav-links .iocn-links{
         justify-content: center;
@@ -410,35 +414,48 @@ max-height: 1000px;
         height: 100%;
         width: 100%;
         padding-top: 30px;
-        
-    }
-    .sidebar.close .nav-links .iocn-links a .links_name{
         display: flex;
-        position: relative;
-        left: 38%;
-        padding: 3px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+    .sidebar .nav-links li .sub-menu{
+        position: absolute;
+        left: 100%;
+        top: -10px;
+        margin-top: 0;
+        padding: 10px 20px;
+        border-radius: 0 6px 6px 0;
+        transition: all 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+        overflow:scroll;
     }
     .sidebar .nav-links .iocn-links .links_name{
         display: flex;
         justify-content: center;
         text-align: center;        
     }
-   
-    .menu_icon_box{
-        z-index: 2;
-        width: fit-content;
-        height: auto;
-        background-color: rgba(38, 0, 255, 0.899);
-        margin: 30px;
+    .sidebar .nav-links li .sub-menu a:hover{
+        opacity: 1;
+        overflow:auto;
+}
+    .menu_icon_box {
         position: fixed;
-        border-radius: 4px;
+        top: 10px;
+        right: 10px;
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        padding: 8px;
         cursor: pointer;
+        box-shadow: 0 0 1 10 black;
     }
     .line1, .line2, .line3{
         width: 40px;
         height: 4px;
         margin: 10px 8px;
-        background-color: black;
+        background-color: rgb(12, 226, 109);
         border-radius: 50px;
         transition: 0.2s;
     }
@@ -446,8 +463,8 @@ max-height: 1000px;
         transform: translate(0px , 15px)rotate(45deg);
     }
     .active .line2{
-        transform: rotate(1000deg);
-        transition: 1s;
+        transform: translateX(-1000px) rotate(1000deg);
+        transition: 2s;
         opacity: 0;
     }
     .active .line3{
@@ -461,29 +478,18 @@ max-height: 1000px;
         pointer-events: fill;
         transition: 0.4s;
         opacity: 1;
-        background-color: #4c4755;
+        height: auto;
+        width: auto;
     }
-    .sidebar .nav-links i.arrow{
-        opacity: 0;
+    .newsbox{
+        max-width: 400px;
+    }    
+    .newsbox {
+        max-width: 100%;
+        padding: 10px;
     }
-    /* .sidebar.close .nav-links li .sub-menu{
-        position: absolute;
-        pointer-events: none;
-        width: 100%;
-        height: 100%;
-        display: none;
-        
-    } */
-    .sidebar.close .nav-links li .sub-menu{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        left: 100%;
-        top: 0;
-        padding: 10px 20px;
-        border-radius: 0 6px 6px 0;
-        transition: all 0.3s ease;
-        opacity: 1;
-    }
-    
+
+    .newsbox h1, .newsbox h2, .newsbox p {
+        font-size: 0.9rem;
+}
 }
