@@ -393,7 +393,7 @@ max-height: 1000px;
         position: fixed;
         top: 0;
         left: -100%;
-        width: 80%;
+        width: auto;
         height: auto;
         transition: 1s;
         z-index: 1;
