@@ -109,6 +109,55 @@ body{
     font-size: 18px;
 }
 
+
+/* ---------------------------------------------------SEARCHBAR------------------------------------------------ */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+  }
+.search-container{
+    padding: 5px;
+    margin: 1px;
+}
+.search-container #search-bar{
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgb(227, 226, 226);
+    
+}
+::placeholder{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+.search-container #search-bar .suggestions{
+    background: white;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border: 1px solid red;
+    z-index: 2000;
+    max-height: 150px;
+    overflow-y: auto;
+    color: rgb(0, 0, 0); 
+}
+.suggestions div{
+    padding: 8px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid black;
+}
+.suggestions div:hover, .suggestions .active{
+    background-color: rgb(181, 181, 181);
+}
+
+
+
+
+
 .sidebar .search-input input {
     position: relative;
     width: 100%;

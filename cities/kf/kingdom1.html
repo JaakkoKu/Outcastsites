@@ -15,6 +15,11 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         </header>
+        <div class="menu_icon_box">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>  
         <div class="container">
             <main>  
                 <div class="box1">
@@ -64,23 +69,11 @@
         
         
         <ul class="nav-links">
-            <!-- <div class ="wrapper">
-                <div class ="search-input">
-                    <input type ="text" placeholder="Search">
-                    <div class="autocom-box">
-                   
-
-                    </div>
-                    <div class ="icon"><i class='bx bx-search-alt'></i></div>
-                </div>
-                
-                
-                
-            </div> -->
-    
-            <script src ="../../suggestions.js"></script>
-            <script src="../../autocomplete.js"></script>
-            
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                <div id="suggestions" class="suggestions"></div>
+              </div>
+        <script src="../../searchbar.js"></script>
         
            
             <li>    
