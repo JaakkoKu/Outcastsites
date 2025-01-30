@@ -15,6 +15,11 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         </header>
+        <div class="menu_icon_box">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>  
         <div class="container">
             <main>  
                 <div class="box">
@@ -38,46 +43,31 @@
         </div> 
         
        
-<div class="sidebar close">
-    
-    <div class ="logo-details">
-    <img src ='../screenshots/outicon.png' alt ="outicon" height ="23" width = "23">
-            <div class="logo_content">   
-            <span class="logo_name">Quests of Outcast</span>
-        </div>
-        </div>
-        
-        
-        <ul class="nav-links">
-            <!-- <div class ="wrapper">
-                <div class ="search-input">
-                    <input type ="text" placeholder="Search">
-                    <div class="autocom-box">
-                   
-
-                    </div>
-                    <div class ="icon"><i class='bx bx-search-alt'></i></div>
+        <div class ="logo-details">
+            <a href="../index.html"><img src ='../screenshots/outicon.png' alt ="outicon" ></a>
+                    <div class="logo_content">   
+                        <a href="../index.html"><span class="logo_name">Quests of Outcast</span></a>
                 </div>
-                
-                
-                
-            </div> -->
-    
-            <script src ="../suggestions.js"></script>
-            <script src="../autocomplete.js"></script>
+                </div>
+                <div class="sidebar close">
             
-        
-           
-            <li>    
-                <div class="iocn-links">
-                    <a href="../index.html">      
-                     <span class="links_name">Home page</span>
-                    </a>  
-                    </div>
-                    </li>
-                <li>
-                <div class="iocn-links">
-                <a href="../maincity.html">
+            
+             <!-- -----------------SEARCHBAR---------------- -->
+             <ul class="nav-links">
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                    <div id="suggestions" class="suggestions"></div>
+                  </div>
+                    <li>
+                    <div class="iocn-links">
+                        <a href="../index.html">      
+                         <span class="links_name">Home page</span>
+                        </a>  
+                        </div>
+                        </li>
+                    <li>
+                    <div class="iocn-links">
+                    <a href="../maincity.html">
                 
                     <span class="links_name">Main city</span>
                 </a>
@@ -208,44 +198,15 @@
     <li><a href ="../cities/other/skyshield.html">Oceanic lizard shield to Sky rider shield</a></li>
 </ul>
 </li>
-<li>
-    <div class="iocn-links">
-    <a href="../cities/access/allacc.html">
-        <span class="links_name">Access quests</span>
-    </a>
-    <i class='bx bxs-chevron-down arrow'></i>
-</div>
-<ul class="sub-menu">
-    
-    <li><a href ="../cities/access/abysskfaccess.html">Access to Yalahar abysses & Farmlands (edron boss run)</a></li>
-    <li><a href ="../cities/access/farmpitsaccess.html">Access to Farmpits (Kingdom farmlands)</a></li>
-    <li><a href ="../cities/access/realmaccess.html">Access to Hitchhiker realms (Edron boss run 4)</a></li>
-    <li><a href ="../cities/access/spaceshipaccess.html">Access to Yalahar spaceship (edron boss run spaceship key + yalahar circle)</a></li>
-    <li><a href ="../cities/access/dunesaccess.html">Access to Dunes of Darkness (Desert of Zenith)</a></li>
+ 
 </ul>
-</li>
- 
-<script>
- let arrow = document.querySelectorAll(".arrow");
- console.log(arrow);
- for (var i =0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e)=>{
-        
-        let arrowParent = e.target.parentElement.parentElement;
-    console.log(arrowParent);
-    arrowParent.classList.toggle("showMenu")
 
-});
- }
- 
- 
-</script>
 <div class="social-media">
     <a href="https://outcastserver.com/"><img src = "../screenshots/outicon.png" alt="Outcastserver.com">
 <div class="media-content"> Home
 </div>
 </div>
-
+</div>
 </div>
 
             </div>  
@@ -258,6 +219,40 @@
    
    </div>
    
+    
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        console.log(arrow);
+        for (var i =0; i < arrow.length; i++) {
+           arrow[i].addEventListener("click", (e)=>{
+               
+               let arrowParent = e.target.parentElement.parentElement;
+           console.log(arrowParent);
+           arrowParent.classList.toggle("showMenu")
+       
+           
+       });
+        }
+       
+        let menu_icon_box = document.querySelector(".menu_icon_box");
+        let sidebar = document.querySelector(".sidebar");
+    
+        menu_icon_box.onclick=function(){
+            menu_icon_box.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        }
+        document.onclick = function(e){
+            if(!menu_icon_box.contains(e.target)&& !sidebar.contains(e.target)){
+            menu_icon_box.classList.remove("active");
+            sidebar.classList.remove("active");
+        }
+    }
+    </script> 
+     <!-- <script src ="suggestions.js"></script>
+     <script src="autocomplete.js"></script> -->
+     <script src ="../searchbar.js"></script>
+<script>
+     
+</script>
     </body>
 </html>
-
