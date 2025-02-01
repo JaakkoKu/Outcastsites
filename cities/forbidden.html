@@ -16,6 +16,11 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         </header>
+        <div class="menu_icon_box">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>  
         <div class="container">
             <main>  
                 <div class="box">
@@ -40,38 +45,23 @@ Requirements: Scythe or The rune of almighty abilities
 </div> 
 
 
-<div class="sidebar close">
-
 <div class ="logo-details">
-<img src ='../screenshots/outicon.png' alt ="outicon" height ="23" width = "23">
-<div class="logo_content">   
-<span class="logo_name">Quests of Outcast</span>
-</div>
-</div>
-
-
-<ul class="nav-links">
-<!-- <div class ="wrapper">
-    <div class ="search-input">
-        <input type ="text" placeholder="Search">
-        <div class="autocom-box">
-       
-
+    <a href="../index.html"><img src ='../screenshots/outicon.png' alt ="outicon" ></a>
+            <div class="logo_content">   
+                <a href="../index.html"><span class="logo_name">Quests of Outcast</span></a>
         </div>
-        <div class ="icon"><i class='bx bx-search-alt'></i></div>
-    </div>
+        </div>
+        <div class="sidebar close">
     
     
-    
-</div> -->
-
-<script src ="../suggestions.js"></script>
-<script src="../autocomplete.js"></script>
-
-
-
-<li>    
-    <div class="iocn-links">
+     <!-- -----------------SEARCHBAR---------------- -->
+     <ul class="nav-links">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+            <li>
+            <div class="iocn-links">
         <a href="../index.html">      
          <span class="links_name">Home page</span>
         </a>  
