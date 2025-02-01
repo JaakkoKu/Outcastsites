@@ -142,75 +142,17 @@ input[type="text"] {
     z-index: 2000;
     max-height: 150px;
     overflow-y: auto;
-    color: rgb(0, 0, 0); 
+    color: rgb(0, 0, 0);
 }
 .suggestions div{
     padding: 8px;
     cursor: pointer;
     background: white;
-    border: 1px solid black;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    
 }
 .suggestions div:hover, .suggestions .active{
     background-color: rgb(181, 181, 181);
-}
-
-
-
-
-
-.sidebar .search-input input {
-    position: relative;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 16px;
-    padding: 0 60px 0 20px;
-    font-size: 16px;
-    box-shadow: 0px 1px 5px black;
-   
-}
-.sidebar .search-input .icon{
-    height: 30px;
-    width: 30px;
-    line-height: 55px;
-    position: absolute;
-    top: -12px;
-    right: 0px;
-    text-align: center;
-    font-size: 20px;
-    color: blue;
-    cursor: pointer;
-}
-.sidebar .search-input .autocom-box{
-    padding: 0;
-    max-height: auto;
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-    font-size: 18px;
-}
-.search-input.active .autocom-box{
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
-    font-size: 18px;
-    background: white;
-    width: 215px;
-    border-radius: 16px;
-}
-.autocom-box li {
-    list-style: none;
-    padding: 8px 12pcx;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-    display: none;
-}
-.search-input.active .autocom-box li{
-    display: block;
-}
-.autocom-box li:hover{
-background: white;
 }
 
 /*  Sidebar links background etc */
