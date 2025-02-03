@@ -216,40 +216,61 @@ Requirements: Scythe or The rune of almighty abilities
 <li><a href ="../cities/access/dunesaccess.html">Access to Dunes of Darkness (Desert of Zenith)</a></li>
 </ul>
 </li>
+ 
+</ul>
 
-<script>
-let arrow = document.querySelectorAll(".arrow");
-console.log(arrow);
-for (var i =0; i < arrow.length; i++) {
-arrow[i].addEventListener("click", (e)=>{
-
-let arrowParent = e.target.parentElement.parentElement;
-console.log(arrowParent);
-arrowParent.classList.toggle("showMenu")
-
-});
-}
-
-
-</script>
 <div class="social-media">
-<a href="https://outcastserver.com/"><img src = "../screenshots/outicon.png" alt="Outcastserver.com">
+    <a href="https://outcastserver.com/"><img src = "../screenshots/outicon.png" alt="Outcastserver.com">
 <div class="media-content"> Home
 </div>
 </div>
-
+</div>
 </div>
 
-</div>  
-
-
-</div>
+            </div>  
+           
+        
+    </div>
 </ul>
 
-
-
-</div>
-
-</body>
+        
+   
+   </div>
+   
+    
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        console.log(arrow);
+        for (var i =0; i < arrow.length; i++) {
+           arrow[i].addEventListener("click", (e)=>{
+               
+               let arrowParent = e.target.parentElement.parentElement;
+           console.log(arrowParent);
+           arrowParent.classList.toggle("showMenu")
+       
+           
+       });
+        }
+       
+        let menu_icon_box = document.querySelector(".menu_icon_box");
+        let sidebar = document.querySelector(".sidebar");
+    
+        menu_icon_box.onclick=function(){
+            menu_icon_box.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        }
+        document.onclick = function(e){
+            if(!menu_icon_box.contains(e.target)&& !sidebar.contains(e.target)){
+            menu_icon_box.classList.remove("active");
+            sidebar.classList.remove("active");
+        }
+    }
+    </script> 
+     <!-- <script src ="suggestions.js"></script>
+     <script src="autocomplete.js"></script> -->
+     <script src ="../searchcity.js"></script>
+<script>
+     
+</script>
+    </body>
 </html>
-

@@ -1,6 +1,6 @@
 const pages = [
   // Cities
-  {title: "Home", url: "../../../index.html"},
+  {title: "Home", url: "../../index.html"},
     {title: "Vroengaard", url: "../../cities/Vroengaard.html"},
     {title: "Wild warrior cave", url: "../../cities/Wildwarriorcave.html"},
     {title: "World teleport", url: "../../cities/worldteleport.html"},
