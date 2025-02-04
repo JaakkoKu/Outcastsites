@@ -18,7 +18,7 @@
 html{
     line-height: 1.5rem;
     font-family: Poppins, 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: auto;
+    overflow: auto;
 }
 body, h1, p, ul, li{
     margin: 0;
@@ -38,7 +38,7 @@ body{
 }
 #newsidebar{
     box-sizing: border box;
-    height: 90vh;
+    height: 100vh;
     width: 340px;
     padding: 5px 1em;
     background-color: var(--base-clr);
@@ -119,6 +119,9 @@ body{
 
 #newsidebar .sub-menu.show{
     grid-template-rows: 1fr;
+}
+#developing{
+    background-color: red;
 }
 .rotate svg:last-child{
     rotate: 180deg;    
@@ -300,7 +303,7 @@ input[type="text"] {
 .box, h1, h2{
     text-align: center;
 }
-.box img{
+.box img, .box1 img{
     max-width: 800px;
     max-height: 800px; 
     
@@ -319,6 +322,7 @@ input[type="text"] {
     width:40px;
     height:40px;
     margin-left: 100px;
+    
 }
 .box1{
     background-color: rgb(255, 255, 255);
@@ -338,6 +342,14 @@ max-height: 1000px;
     text-align: center;
     justify-content: center;
 }
+.box1 a, .box a{
+    text-decoration: none;
+    color: green;
+}
+.box1 a:hover, .box a:hover{
+    color:red;
+    text-decoration: underline;
+}
 .box1 p{
     font-size: 18px;
     font-weight: 400;
@@ -355,25 +367,36 @@ max-height: 1000px;
         background-size: 100% 100%;
     }
     .header {
-        font-size: 1.5rem;
+        font-size: 1em;
         padding: 8px;
+        margin-left: 3px;
+    }
+    #developing{
+        background-color: red;
+        font-size: 13px;
     }
     main{
         padding: 2em 1em 60px 1em;
     }
-    .newsbox, .box, .box1{
-        max-width: 400px;
-        max-height: auto;
+    .container .newsbox a img{
+        width:27px;
+        height:27px;
+        margin-left: 30px;
         
     }
-    .box, .box1{
-        margin-left: 50px;
+    .newsbox, .box, .box1{
+        max-width: 220px;
+        max-height: auto;
+        margin-left: -50px;
+    }
+    .box a, .box1 a{
+        font-size: 15px;
     }
     .newsbox p, .box p,.box1 p{
         font-size: 12px;
     }
-    .box img{
-        max-width: 380px;
+    .box img, .box1 img{
+        max-width: 220px;
         max-height: 240px;
     }
     .newsbox h1,h2,.box h1,h2,.box1 h1,h2{
@@ -397,7 +420,7 @@ max-height: 1000px;
     }
     #newsidebar{
         height: 100%;
-        width: 1fr;
+        width: 20em;
         border-top: 1px solid var(--line-clr);
         border-right: none;
         position: fixed;
