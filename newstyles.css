@@ -337,6 +337,10 @@ input[type="text"] {
 .box li{
     font-size: 20px;
     font-weight: 600;
+    display: grid;
+    justify-items: center;
+    
+    
 }
 .container .box1 img{
 max-width: 1000px;
