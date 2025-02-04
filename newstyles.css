@@ -334,6 +334,10 @@ input[type="text"] {
     justify-items: center;
     margin: auto;
 }
+.box li{
+    font-size: 20px;
+    font-weight: 600;
+}
 .container .box1 img{
 max-width: 1000px;
 max-height: 1000px;
@@ -345,10 +349,12 @@ max-height: 1000px;
 .box1 a, .box a{
     text-decoration: none;
     color: green;
+    
 }
 .box1 a:hover, .box a:hover{
     color:red;
     text-decoration: underline;
+    transition: 0.5s;
 }
 .box1 p{
     font-size: 18px;
