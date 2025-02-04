@@ -11,15 +11,10 @@
         
         <header class="header">Aberon
            
-        <!-- Boxicons CDN Link -->
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         </header>
-        <div class="menu_icon_box">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>  
+        
         <div class="container">
             <main>  
                 <div class="box">
@@ -222,36 +217,8 @@
    </div>
    
     
-    <script>
-        let arrow = document.querySelectorAll(".arrow");
-        console.log(arrow);
-        for (var i =0; i < arrow.length; i++) {
-           arrow[i].addEventListener("click", (e)=>{
-               
-               let arrowParent = e.target.parentElement.parentElement;
-           console.log(arrowParent);
-           arrowParent.classList.toggle("showMenu")
-       
-           
-       });
-        }
-       
-        let menu_icon_box = document.querySelector(".menu_icon_box");
-        let sidebar = document.querySelector(".sidebar");
+   
     
-        menu_icon_box.onclick=function(){
-            menu_icon_box.classList.toggle("active");
-            sidebar.classList.toggle("active");
-        }
-        document.onclick = function(e){
-            if(!menu_icon_box.contains(e.target)&& !sidebar.contains(e.target)){
-            menu_icon_box.classList.remove("active");
-            sidebar.classList.remove("active");
-        }
-    }
-    </script> 
-     <!-- <script src ="suggestions.js"></script>
-     <script src="autocomplete.js"></script> -->
      <script src ="../../searchbar.js"></script>
 <script>
      

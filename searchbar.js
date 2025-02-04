@@ -97,6 +97,8 @@ const pages = [
     }
   });
 
+  // keys up and down for searching through the suggestions
+
   searchBar.addEventListener('keydown', function (e){
     const suggestions = suggestionsContainer.querySelectorAll('div');
     if(!suggestions.length) return;
@@ -125,4 +127,14 @@ const pages = [
     suggestions.forEach((suggestion, index) => {
         suggestion.classList.toggle('active', index === activeIndex);
     });
+  }
+  document.getElementById('search-bar').addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+      performSearch();
+    }
+  });
+
+  function performSearch(){
+    const searching = document.getElementById('search-bar').value;
+    console.log('Searching for:',searching);
   }
