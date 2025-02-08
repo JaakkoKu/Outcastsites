@@ -302,7 +302,13 @@ input[type="text"] {
 }
 .box, h1, h2{
     text-align: center;
+    
 }
+.box> h1,h2,h3{
+    text-decoration: underline;
+    color: rgb(228, 110, 14);
+}
+
 .box img, .box1 img{
     max-width: 800px;
     max-height: 800px; 
