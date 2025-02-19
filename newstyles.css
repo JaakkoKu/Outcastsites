@@ -250,6 +250,7 @@ input[type="text"] {
     background-color: rgb(181, 181, 181);
 }
 
+
 .container{
     display: grid;
     flex-direction: column;
