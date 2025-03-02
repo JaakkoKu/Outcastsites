@@ -1,6 +1,8 @@
 const toggleButton = document.getElementById('toggle-btn')
 const newsidebar = document.getElementById('newsidebar')
 
+
+
 // Sidebar is closed from the beginning
 function toggleSidebar(){
     newsidebar.classList.toggle('close')
