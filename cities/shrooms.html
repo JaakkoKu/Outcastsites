@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="eng" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title> The quests of Outcastserver | By Sugga</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel = "stylesheet" href="../newstyles.css">
+        <script type ="text/javascript" src ="../uusscript.js" defer></script>
+     </head>
+     <body> 
+        
+        <header class="header">Magical mushrooms
+           
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        </header>
+        <nav id="newsidebar" class="open">
+            <!-- -----------------SEARCHBAR---------------- -->
+            <ul class="nav-links">
+               <li>
+                       <span class="logo">Quests of Outcast</span>
+                       <button onclick =toggleSidebar() id="toggle-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                       </button>
+                         </li>
+                         <li>
+                           <button onclick =search(this) id ="search-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                       </button>
+                            <span class="search-container">
+   
+                           <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                           <div id="suggestions" class="suggestions"></div>
+                         </li>
+                         <li class ="active">
+                           <a href="../index.html">
+                               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                               <span>Home</span>
+                           </a>
+                         </li>
+                       <li class ="active">
+                       
+          <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+           <h4>MC</h4>
+           <span>Main city</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="Vroengaard.html">Vroengaard</a></li>
+               <li><a href="Wildwarriorcave.html">Wild warrior cave</a></li>
+               <li><a href="worldteleport.html">World teleport</a></li>
+           </div>
+           </ul>
+           </li>       
+           <li class ="active">
+               
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>CI</h4>
+           <span>Other cities</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Aberon.html">Aberon</a></li>
+               <li><a href="../cities/adicama.html">Adicama</a></li>
+               <li><a href="../cities/drushak.html">Drushak</a></li>
+               <li><a href="../cities/edron.html">Edron/Qutor's grove</a></li>
+               <li><a href="../cities/forbidden.html">Forbidden forest</a></li>
+               <li><a href="../cities/fendal.html">Fendal</a></li>
+               <li><a href="../cities/Lithgow.html">Lithgow</a></li>
+               <li><a href="../cities/Snowmania.html">Snowmania</a></li>
+               <li><a href="../cities/tarid.html">Tarid</a></li>
+               <li><a href="../cities/valmoor.html">Valmoor</a></li>
+           </div>
+       </ul>
+   </li>
+           <li class ="active"> 
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>FG</h4>
+           <span>Fallen Gods area</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+              <!-- <li><a href="../../cities/Fallengods/mainarea.html">Main area</a></li> -->
+               <li><a href="../cities/Fallengods/plains.html">Plains of Gold</a></li>
+               <li><a href="../cities/Fallengods/helarctos.html">Helarctos area</a></li>
+               <li><a href="../cities/Fallengods/mysticon.html">Mysticon</a></li>
+               <li><a href="../cities/Fallengods/wreckedship.html">Wrecked ship</a></li>
+               <li><a href="../cities/Fallengods/waterfalls.html">Skyrider waterfalls</a></li>
+           </div>
+        </ul>
+       </li>
+           <li>
+               <li class ="active">
+               
+                   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                       <h4>EB</h4>
+                   <span>Edron bossrun</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                   </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Bossrun/spaceshipkey.html">Spaceship key</a></li>
+               <li><a href="../cities/Bossrun/axxion.html">Underworld Axxion</a></li>
+               <li><a href="../cities/Bossrun/beluna.html">Beluna</a></li>
+               <li><a href="../cities/Bossrun/desert.html">Desert of Zenith</a></li>
+               <li><a href="../cities/Bossrun/yalahar.html">Yalahar</a></li>
+           </div>
+               
+   
+          </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>KF</h4>
+               <span>Kingdom farmlands</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/kf/kingdom1.html">Kingdom farmlands part 1</a></li>
+               <li><a href="../cities/kf/kingdom2.html">Kingdom farmlands part 2</a></li>
+               <li><a href="../cities/kf/kingdom3.html">Kingdom farmlands part 3</a></li>
+               <li><a href="../cities/kf/ebr3.html">Edron bossrun 3</a></li>
+           </div>
+           </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>AB</h4>
+               <span>Abysses of Achernar</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+           <div>
+               <li><a href="../cities/abyss/abyss1.html">Yalahar abbyses of Achernar 1</a></li>
+               <li><a href="../cities/abyss/abyss2.html">Yalahar abbyses of Achernar 2</a></li>
+               <li><a href="../cities/abyss/abyss3.html">Yalahar abbyses of Achernar 3</a></li>
+               <li><a href="../cities/abyss/spacewalk.html">Spacewalk</a></li>
+               <li><a href="../cities/abyss/prison.html">Prison of Achernar</a></li>
+           </div>
+        </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>SE</h4>
+   <span>Set upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href="../cities/setupgrades/darkwarrior.html">Dark warrior set</a></li>
+   <li><a href="../cities/setupgrades/zenith.html">Zenith set</a></li>
+   <li><a href="../cities/setupgrades/draconian.html">Draconian set</a></li>
+   <li><a href="../cities/setupgrades/fallen.html">Fallen gods set</a></li>
+   <li><a href="../cities/setupgrades/hela.html">Helarctos set</a></li>
+   <li><a href="../cities/setupgrades/overlord.html">Dark overlord set</a></li>
+   <li><a href="../cities/setupgrades/cyclip.html">Cyclip set</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>WP</h4>
+   <span>Weapon & shield upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/other/fullhota.html">Full helmet of the ancients</a></li>
+<li><a href="../cities/other/endy.html">Endymions & Archmage wands upgrade</a></li>
+   <li><a href="../cities/other/skywep.html">Oceanic lizard weapon</a></li>
+   <li><a href="../cities/other/cycshield.html">Tusk, Rose or Honour shield</a></li>
+   <li><a href="../cities/other/ocshield.html">Cyclip shield</a></li>
+   <li><a href ="../cities/other/skyshield.html">Oceanic lizard shield</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>AC</h4>
+   <span>Access quests</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/access/abysskfaccess.html">Yalahar abysses & Farmlands</a></li>
+   <li><a href ="../cities/access/farmpitsaccess.html">Farmpits</a></li>
+   <li><a href ="../cities/access/realmaccess.html">Hitchhiker realms</a></li>
+   <li><a href ="../cities/access/spaceshipaccess.html">Yalahar spaceship</a></li>
+   <li><a href ="../cities/access/dunesaccess.html">Dunes of Darkness</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+    <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+        <h4>OT</h4>
+    <span>Other</span>
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+    </button>
+    <ul class="sub-menu">
+    <div>
+    <li><a href ="../cities/shrooms.html">Mushrooms</a></li>
+    </div>
+    </ul>
+    </li>
+   
+   </ul>
+   </nav>
+        <div class="container">
+            <main>  
+                <div class="mushbox">
+                    <h1>Magic mushrooms of Outcast</h1><br>
+                    
+                    <h2>Main city</h2><br>
+                    <hr><br>
+                     <img src="../screenshots/shrooms/Main city/depot.webp" alt="depotmush"><br>
+                    <p>Depot, main city</p><br>
+                     <img src="../screenshots/shrooms/Main city/depottrainers.webp" alt="depottrainers"><br>
+                    <p>Depot, trainers</p><br>
+                     <img src="../screenshots/shrooms/Main city/cityteleports.webp" alt="City teleport"><br>
+                    <p>City teleports</p><br>
+                     <img src="../screenshots/shrooms/Main city/dragonisland.webp" alt="Dragonisland"><br>
+                    <p>Dragon islands</p><br>
+                     <img src="../screenshots/shrooms/Main city/dragons2.webp" alt="dragons"><br>
+                    <p>Dragon islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/elitelands.webp" alt="Elitelands"><br>
+                    <p>Elite lands</p><br>
+                    <img src="../screenshots/shrooms/Main city/football.webp" alt="football"><br>
+                    <p>Football area</p><br>
+                    <img src="../screenshots/shrooms/Main city/forgotten.webp" alt="Forgotten"><br>
+                    <p>Forgotten islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/gboots.webp" alt="Golden boots"><br>
+                    <p>Golden boots quest</p><br>
+                    <img src="../screenshots/shrooms/Main city/jungleeast.webp" alt="Jungle">
+                    <img src="../screenshots/shrooms/Main city/jungleeastt.webp" alt="Jungle"><br><br>
+                    <p>Jungle, east</p><br>
+                    <img src="../screenshots/shrooms/Main city/junglesouth.webp" alt="jungle"><br>
+                    <p>Jungle, South</p><br>
+                    <img src="../screenshots/shrooms/Main city/main_city_south_underground.webp" alt="mainsouth"><br>
+                    
+                    <img src="../screenshots/shrooms/Main city/main1.webp" alt="maincity"><br>
+
+                    <img src="../screenshots/shrooms/Main city/main2.webp" alt="maincity"><br>
+
+                    <img src="../screenshots/shrooms/Main city/north2.1.webp" alt="">
+                    <img src="../screenshots/shrooms/Main city/north_2.2.webp" alt="">
+                    <img src="../screenshots/shrooms/Main city/north_2.3.webp" alt=""><br>
+                    <p>North area of main city</p><br>
+                    <img src="../screenshots/shrooms/Main city/northcity.webp" alt="northcity"><br>
+                    <p>Somewhere in the North of city</p><br>
+                    <img src="../screenshots/shrooms/Main city/somberinferno.webp" alt="somber"><br>
+                    <p>Somber inferno</p><br>
+                    <img src="../screenshots/shrooms/Main city/somequest.webp" alt="somequest"><br>
+
+                    <img src="../screenshots/shrooms/Main city/spiderislands.webp" alt="spiderisland"><br>
+                    <p>Spider islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/spiderlands.webp" alt="spiderisland"><br>
+                    <p>Spider islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/warlocks1.webp" alt="warlocks"><br>
+                    <p>Warlocks area</p><br>
+                    <hr>
+
+
+                    <h2>Aberon</h2><br>
+                    
+                    <img src="../screenshots/shrooms/Aberon/aberon_2.webp" alt="Aberon"><br>
+                    <img src="../screenshots/shrooms/Aberon/Aberon_3.webp" alt="Aberon"><br>
+                    <img src="../screenshots/shrooms/Aberon/Aberon_1.webp" alt="Aberon"><br>
+                    <img src="../screenshots/shrooms/Aberon/deeperbanuta.webp" alt="Aberon deeper"><br>
+                    <p>Deeper banuta</p><br>
+                    <img src="../screenshots/shrooms/Aberon/jungle1.webp" alt="Aberon jungle"><br>
+                    <p>Jungle city</p><br>
+                    <hr>
+                    
+                    <h2>Adicama</h2><br>
+
+                    <img src="../screenshots/shrooms/Adicama/adicama1.webp" alt="Adicama"><br>
+                    <p>Adicama, Eastern exp doors</p><br>
+                    <img src="../screenshots/shrooms/Adicama/desertadicama.webp" alt="Adicama"><br>
+                    <p>Image of Adicama map, 2 mushrooms</p><br>
+
+                    <hr>
+
+                    <h2>Forbidden forest</h2><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbidden2.webp" alt=""><br>
+                    <p>Forbidden forest North-west corner</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbidden3.webp" alt=""><br>
+                    <p>Forbidden forest far North</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbiddenstart.webp" alt=""><br>
+                    <p>Forbidden forest beginning</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbiddenunder.webp" alt=""><br>
+                    <p>Forbidden forest underground</p><br>
+                    <hr>
+
+                    <h2>Drushak</h2><br>
+                    <img src="../screenshots/shrooms/Drushak/drushak1.webp" alt="Drushak"><br>
+                    <p>Drushak, harashaki quest</p><br>
+                    <hr>
+                    
+                    <h2>Lithgow</h2><br>
+                    <img src="../screenshots/shrooms/Lithgow/lithgow1.webp" alt=""><br>
+                    <p>Lithgow North-west corner</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/lithgow2.webp" alt=""><br>
+                    <p>Lithgow South-east corner</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset.webp" alt=""><br>
+                    <p>Zenith set quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset1.webp" alt=""><br>
+                    <p>Zenith set quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset2.webp" alt=""><br>
+                    <p>Zenith set quest area</p><br>
+                    <hr>
+
+                    <h2>Edron</h2><br>
+
+                    <img src="../screenshots/shrooms/edron/edronboat.webp" alt=""><br>
+                    <p>Edron boat</p><br>
+                    <img src="../screenshots/shrooms/edron/edronnortheast.webp" alt=""><br>
+                    <p>Edron North East area</p>
+                    <img src="../screenshots/shrooms/edron/edronorcs.webp" alt=""><br>
+                    <p>Edron orcs</p>
+                    <img src="../screenshots/shrooms/edron/edronsouth.webp" alt=""><br>
+                    <p>Map of edron, orcs area</p><br>
+                    <hr>
+                    
+                    <h2>Tarid</h2><br>
+                    <img src="../screenshots/shrooms/Tarid/tarid1.webp" alt=""><br>
+                    <p>Tarid city, middle arena</p><br>
+                    <img src="../screenshots/shrooms/Tarid/taridocwep.webp" alt=""><br>
+                    <p>Oceanic lizard weapon quest path</p><br>
+                    <img src="../screenshots/shrooms/Tarid/deathlands.webp" alt=""><br>
+                    <p>Tarid, Deathlands, bright sword / hota piece quest</p><br>
+                    <img src="../screenshots/shrooms/Tarid/ocwep.webp" alt=""><br>
+                    <p>Oceanic lizard weapon, house</p><br>
+                    <hr>
+
+                    <h2>Valmoor</h2><br>
+
+                    <img src="../screenshots/shrooms/valmoor/valmoor1.1.webp" alt="">
+                    <img src="../screenshots/shrooms/valmoor/valmoor1.webp" alt="">
+                    <p>Valmoor North area trolls</p><br>
+                    <hr>
+
+                    <h2>Plains</h2><br>
+                    <img src="../screenshots/shrooms/Plains/plains1.webp" alt=""><br>
+                    <p>Plains, demons area underground</p><br>
+                    <img src="../screenshots/shrooms/Plains/plains2.webp" alt=""><br>
+                    <p>From magicians creek cp, west side house</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainscity.webp" alt=""><br>
+                    <p>Way to Plains quest, krampus house in the city</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainscity1.webp" alt=""><br>
+                    <p>Plains area, first city</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainscp.webp" alt=""><br>
+                    <p>Plains checkpoint</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainsdrags.webp" alt=""><br>
+                    <p>Plains area at the stone lever area</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainsmcreek1.webp" alt=""><br>
+                    <p>Magicians creek North-east place</p><br>
+                    <img src="../screenshots/shrooms/Plains/roseshield.webp" alt=""><br>
+                    <p>Map of Rose shield area, hidden under a tree</p><br>
+                    <hr>
+
+                    <h2>Beluna</h2><br>
+
+                    <img src="../screenshots/shrooms/Beluna/beluna1.webp" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/beluna2.webp" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/belunabeforetp.webp" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/belunademodrases.webp" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/belunaending.png" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/belunahell.webp" alt=""><br>
+                    <img src="../screenshots/shrooms/Beluna/skywep1.webp" alt=""><br>
+                    <p>Sky weapon area, East from stairs</p><br>
+                    <img src="../screenshots/shrooms/Beluna/skywepend.webp" alt=""><br>
+                    <p>Sky weapon area, ending</p><br>
+                    <hr>
+                    
+                    <h2>Wrecked ship area</h2><br>
+
+                    <img src="../screenshots/shrooms/wrecked/wrecked1.webp" alt=""><br>
+                    <p>Wrecked ship ending, before rewards</p>
+                    <img src="../screenshots/shrooms/wrecked/wrecked2.webp" alt=""><br>
+                    <p>Wrecked ship, with some demons</p><br>
+                    <hr>
+
+                    <h2>Mysticon</h2><br>
+
+                    <img src="../screenshots/shrooms/Mysticon/mysticon_tp.webp" alt=""><br>
+                    <p>Before the teleport to the Mysticon</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon1.webp" alt=""><br>
+                    <p>Mysticon, after long path</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon2.webp" alt=""><br>
+                    <p>Mysticon, east from checkpoint</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon3.webp" alt=""><br>
+                    <p>Mysticon main area</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon4.webp" alt=""><br>
+                    <p>Mysticon, far to the West</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon northwestladders.webp" alt=""><br>
+                    <p>Mysticon, last area. West place, South are the ladders</p><br>
+                    
+                    <img src="../screenshots/shrooms/Mysticon/mysticonlast.webp" alt=""><br>
+                    <p>Mysticon, before reward room, south</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticonquest.webp" alt="">
+                    <img src="../screenshots/shrooms/Mysticon/mysticonquest1.1.webp" alt=""><br>
+                    <p>Mysticon quest area, after serpent boss. West side stairs down and go south-west.</p><br>
+                    
+                    <img src="../screenshots/shrooms/Mysticon/mysticonwest.webp" alt=""><br>
+                    <p>Mysticon. Wizard boss is to the West from here.</p>
+                    <hr>
+
+                    <h2>Oceanic lizard shield</h2><br>
+
+                    <img src="../screenshots/shrooms/ocshield/ocshield1.webp" alt=""><br>
+                    <p>Oceanic lizard shield area, North-east</p><br>
+                    <hr>
+
+                    <h2>Skyrider shield</h2><br>
+
+                    <img src="../screenshots/shrooms/skyshield/skyshield1.webp" alt=""><br>
+                    <p>Skyrider shield, from cp2 underground the tower</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshield2.webp" alt=""><br>
+                    <p>Skyrider shield, second last place</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshieldend1.webp" alt=""><br>
+                    <p>Skyrider shield, last place</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshieldhouse.webp" alt=""><br>
+
+                    <hr>
+
+                   
+                    
+
+
+
+                    </div>
+            </main>         
+           
+        </div> 
+    
+   
+    
+     <script src ="../searchcity.js"></script>
+<script>
+     
+</script>
+    </body>
+</html>
