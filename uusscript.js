@@ -45,10 +45,7 @@ function search(button){
 
 // Prevent sidebar and sub-menu from closing when clicking links
 newsidebar.addEventListener('click', (event) => {
-    if (event.target.tagName === 'A') {
+    if (event.target.tagName === 'a') {
         event.stopPropagation()
     }
 })
-
-// Now, clicking a link keeps both the sidebar and sub-menu open
-// Let me know if you want any more adjustments! 🚀
