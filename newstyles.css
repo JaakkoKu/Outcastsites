@@ -425,7 +425,7 @@ max-height: 1000px;
         margin-left: 30px;
         
     }
-    .newsbox, .box, .box1{
+    .newsbox, .box, .box1, .mushbox{
         max-width: 220px;
         max-height: auto;
         margin-left: -50px;
@@ -436,7 +436,7 @@ max-height: 1000px;
     .newsbox p, .box p,.box1 p{
         font-size: 12px;
     }
-    .box img, .box1 img{
+    .box img, .box1 img, .mushbox img{
         max-width: 220px;
         max-height: 240px;
     }
