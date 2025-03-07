@@ -3,114 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Popup</title>
+    <title>Image Click Transition</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             background-color: #f0f0f0;
         }
 
-        .container img {
+        .image-container img {
             width: 300px;
             height: auto;
             cursor: pointer;
             border: 2px solid #ccc;
             border-radius: 10px;
-            transition: transform 0.2s ease;
+            transition: transform 0.4s ease;
         }
 
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup img {
-            max-width: 90%;
-            max-height: 90%;
-            border: 3px solid #fff;
-            border-radius: 10px;
-        }
-
-        .popup.active {
-            display: flex;
-        }
-        .container .image-container .image:hover img{
-            transform: scale(1.03);
-        }
-        .container .popup-image{
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: black;
-            opacity: 97%;
-            height: 100%;
-            width: 100%;
-            z-index: 100;
-            display:none;
-        }
-        .container .popup-image span{
-            position: absolute;
-            top: 0;
-            right: 10px;
-            font-weight: bolder;
-            font-size: 60px;
-            cursor: pointer;
-            z-index: 100;
-            color: white;
-        }
-        .container .popup-image img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 5px solid white;
-            border-radius: 5px;
-            width: 750px;
-            object-fit: cover;
-        }
-        @media(max-width: 768px){
-            .container .popup-image img{
-                width: 95%;
-            }
+        .image-container img.clicked {
+            transform: scale(1.5); /* Scale the image */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class ="image-container">
-    <div class="image"><img src="../screenshots/avatar.jpeg" alt="Enlarged Image"></div>
-    <div class="image"><img src="../screenshots/discord.jpg" alt=""></div>
-    <div class="image"><img src="../screenshots/icons/Black_Skull_29.webp" alt=""></div>
-    </div>
 
-    <div class="popup-image">
-        <span>&times;</span>
-        <img src="../screenshots/icons/Black_Skull_29.webp" alt="">
-    </div>
+<div class="image-container">
+    <img id="myImage" src="https://via.placeholder.com/300" alt="Sample Image">
 </div>
-    <script>
-        document.querySelectorAll(".image-container img").forEach(image =>{
-            image.onclick = () =>{
-                document.querySelector('.popup-image').style.display = 'block';
-                document.querySelector('.popup-image img').src =image.getAttribute('src');
-            }
-        });
-        document.querySelector('.popup-image span').onclick = ()=>{
-            document.querySelector('.popup-image').style.display = "none";
-        }
-    </script>
+
+<script>
+    const img = document.getElementById("myImage");
+
+    img.onclick = () => {
+        img.classList.toggle("clicked"); // Toggle the 'clicked' class on click
+    };
+</script>
+
 </body>
 </html>
