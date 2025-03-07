@@ -25,8 +25,8 @@
         }
 
         .popup img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 80%;
             border: 3px solid #fff;
             border-radius: 10px;
         }
@@ -66,12 +66,12 @@
             transform: translate(-50%, -50%);
             border: 5px solid white;
             border-radius: 5px;
-            width: 80%;
+            width: 75%;
             object-fit: cover;
         }
         @media(max-width: 768px){
             .container .popup-image img{
-                width: 95%;
+                width: 70%;
             }
         }</style>
      <body> 
@@ -292,9 +292,9 @@
 
                     <hr><br>
                      <p>Depot, main city</p><br>
-                     <div class="image"><img src="../screenshots/shrooms/Main city/depot.webp" alt="depotmush"><br></div>
+                     <img src="../screenshots/shrooms/Main city/depot.webp" alt="depotmush"><br>
                    <p>Depot, trainers</p><br>
-                     <div class="image"><img src="../screenshots/shrooms/Main city/depottrainers.webp" alt="depottrainers"><br></div>
+                     <img src="../screenshots/shrooms/Main city/depottrainers.webp" alt="depottrainers"><br>
                     <p>City teleports</p><br>
                      <img src="../screenshots/shrooms/Main city/cityteleports.webp" alt="City teleport"><br>
                      <p>Dragon islands</p><br>
@@ -677,17 +677,20 @@
     
      <script src ="../searchcity.js"></script>
      <script>
-        document.querySelectorAll(".mushbox img").forEach(image =>{
-            image.onclick = () =>{
-                document.querySelector('.popup-image').style.display = 'block';
-                document.querySelector('.popup-image img').src =image.getAttribute('src');
-                
-            }
-        });
-        document.querySelector('.popup-image span').onclick = ()=>{
-            document.querySelector('.popup-image').style.display = "none";
-            
-        }
+ document.querySelectorAll(".mushbox img").forEach(image => {
+    image.onclick = () => {
+        const popup = document.querySelector('.popup-image');
+        const popupImg = popup.querySelector('img');
+
+        popup.style.display = 'block';
+        popupImg.src = image.getAttribute('src');
+    }
+});
+
+// Hide popup when clicking outside the image or on the image
+document.querySelector('.popup-image').onclick = () => {
+    document.querySelector('.popup-image').style.display = "none";
+};
     </script>
     </body>
 </html>
