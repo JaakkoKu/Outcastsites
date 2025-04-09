@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="eng" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title> The quests of Outcastserver | By Sugga</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel = "stylesheet" href="../newstyles.css">
+        <script type ="text/javascript" src ="../uusscript.js" defer></script>
+     </head>
+     <style> 
+     .container img{
+        cursor:pointer;
+     }
+     .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 3px solid #fff;
+            border-radius: 10px;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+        .container .mushbox .image:hover img{
+            transform: scale(1.03);
+            transition: 0.3s;
+        }
+        .container .popup-image{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: black;
+            opacity: 97%;
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            display:none;
+        }
+        .container .popup-image span{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-weight: bolder;
+            font-size: 60px;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+        }
+        .container .popup-image img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid white;
+            border-radius: 5px;
+            width: 75%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+       
+        @media(max-width: 768px){
+            .container .popup-image img{
+                width: 70%;
+            }
+        }</style>
+     <body> 
+        
+        <header class="header">Hitchhiker Scopes
+           
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        </header>
+        <nav id="newsidebar" class="open">
+            <!-- -----------------SEARCHBAR---------------- -->
+            <ul class="nav-links">
+               <li>
+                       <span class="logo">Quests of Outcast</span>
+                       <button onclick =toggleSidebar() id="toggle-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                       </button>
+                         </li>
+                         <li>
+                           <button onclick =search(this) id ="search-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                       </button>
+                            <span class="search-container">
+   
+                           <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                           <div id="suggestions" class="suggestions"></div>
+                         </li>
+                         <li class ="active">
+                           <a href="../index.html">
+                               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                               <span>Home</span>
+                           </a>
+                         </li>
+                       <li class ="active">
+                       
+          <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+           <h4>MC</h4>
+           <span>Main city</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="Vroengaard.html">Vroengaard</a></li>
+               <li><a href="Wildwarriorcave.html">Wild warrior cave</a></li>
+               <li><a href="worldteleport.html">World teleport</a></li>
+           </div>
+           </ul>
+           </li>       
+           <li class ="active">
+               
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>CI</h4>
+           <span>Other cities</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Aberon.html">Aberon</a></li>
+               <li><a href="../cities/adicama.html">Adicama</a></li>
+               <li><a href="../cities/drushak.html">Drushak</a></li>
+               <li><a href="../cities/edron.html">Edron/Qutor's grove</a></li>
+               <li><a href="../cities/forbidden.html">Forbidden forest</a></li>
+               <li><a href="../cities/fendal.html">Fendal</a></li>
+               <li><a href="../cities/Lithgow.html">Lithgow</a></li>
+               <li><a href="../cities/Snowmania.html">Snowmania</a></li>
+               <li><a href="../cities/tarid.html">Tarid</a></li>
+               <li><a href="../cities/valmoor.html">Valmoor</a></li>
+           </div>
+       </ul>
+   </li>
+           <li class ="active"> 
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>FG</h4>
+           <span>Fallen Gods area</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+              <!-- <li><a href="../../cities/Fallengods/mainarea.html">Main area</a></li> -->
+               <li><a href="../cities/Fallengods/plains.html">Plains of Gold</a></li>
+               <li><a href="../cities/Fallengods/helarctos.html">Helarctos area</a></li>
+               <li><a href="../cities/Fallengods/mysticon.html">Mysticon</a></li>
+               <li><a href="../cities/Fallengods/wreckedship.html">Wrecked ship</a></li>
+               <li><a href="../cities/Fallengods/waterfalls.html">Skyrider waterfalls</a></li>
+           </div>
+        </ul>
+       </li>
+           <li>
+               <li class ="active">
+               
+                   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                       <h4>EB</h4>
+                   <span>Edron bossrun</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                   </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Bossrun/spaceshipkey.html">Spaceship key</a></li>
+               <li><a href="../cities/Bossrun/axxion.html">Underworld Axxion</a></li>
+               <li><a href="../cities/Bossrun/beluna.html">Beluna</a></li>
+               <li><a href="../cities/Bossrun/desert.html">Desert of Zenith</a></li>
+               <li><a href="../cities/Bossrun/yalahar.html">Yalahar</a></li>
+           </div>
+               
+   
+          </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>KF</h4>
+               <span>Kingdom farmlands</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/kf/kingdom1.html">Kingdom farmlands part 1</a></li>
+               <li><a href="../cities/kf/kingdom2.html">Kingdom farmlands part 2</a></li>
+               <li><a href="../cities/kf/kingdom3.html">Kingdom farmlands part 3</a></li>
+               <li><a href="../cities/kf/ebr3.html">Edron bossrun 3</a></li>
+           </div>
+           </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>AB</h4>
+               <span>Abysses of Achernar</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+           <div>
+               <li><a href="../cities/abyss/abyss1.html">Yalahar abbyses of Achernar 1</a></li>
+               <li><a href="../cities/abyss/abyss2.html">Yalahar abbyses of Achernar 2</a></li>
+               <li><a href="../cities/abyss/abyss3.html">Yalahar abbyses of Achernar 3</a></li>
+               <li><a href="../cities/abyss/spacewalk.html">Spacewalk</a></li>
+               <li><a href="../cities/abyss/prison.html">Prison of Achernar</a></li>
+           </div>
+        </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>SE</h4>
+   <span>Set upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href="../cities/setupgrades/darkwarrior.html">Dark warrior set</a></li>
+   <li><a href="../cities/setupgrades/zenith.html">Zenith set</a></li>
+   <li><a href="../cities/setupgrades/draconian.html">Draconian set</a></li>
+   <li><a href="../cities/setupgrades/fallen.html">Fallen gods set</a></li>
+   <li><a href="../cities/setupgrades/hela.html">Helarctos set</a></li>
+   <li><a href="../cities/setupgrades/overlord.html">Dark overlord set</a></li>
+   <li><a href="../cities/setupgrades/cyclip.html">Cyclip set</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>WP</h4>
+   <span>Weapon & shield upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/other/fullhota.html">Full helmet of the ancients</a></li>
+<li><a href="../cities/other/endy.html">Endymions & Archmage wands upgrade</a></li>
+   <li><a href="../cities/other/skywep.html">Oceanic lizard weapon</a></li>
+   <li><a href="../cities/other/cycshield.html">Tusk, Rose or Honour shield</a></li>
+   <li><a href="../cities/other/ocshield.html">Cyclip shield</a></li>
+   <li><a href ="../cities/other/skyshield.html">Oceanic lizard shield</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>AC</h4>
+   <span>Access quests</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/access/abysskfaccess.html">Yalahar abysses & Farmlands</a></li>
+   <li><a href ="../cities/access/farmpitsaccess.html">Farmpits</a></li>
+   <li><a href ="../cities/access/realmaccess.html">Hitchhiker realms</a></li>
+   <li><a href ="../cities/access/spaceshipaccess.html">Yalahar spaceship</a></li>
+   <li><a href ="../cities/access/dunesaccess.html">Dunes of Darkness</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+    <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+        <h4>OT</h4>
+    <span>Other</span>
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+    </button>
+    <ul class="sub-menu">
+    <div>
+    <li><a href ="../cities/shrooms.html">Mushrooms by city</a></li>
+    <li><a href="../cities/ordershrooms.html">Mushrooms by number</a></li>
+    <li><a href="../cities/scopes.html">Hitchhiker scopes</a></li>
+
+    
+    </div>
+    </ul>
+    </li>
+   
+   </ul>
+   </nav>
+        <div class="container">
+            <main>  
+                <div class="box">
+
+                  <h1>Hitchhiker scopes around the map</h1><br>
+                  <h2>Phase 1 scopes (10x)</h2><br>
+
+                  <p>Scope number 1, Yalahar dark mountains checkpoint</p><br>
+                   <img src="../screenshots/scopes/scope1.jpg" alt="scope1"><br>
+                   <p>Scope number 2, Abyss 1, South from checkpoint </p><br>
+                   <img src="../screenshots/scopes/scope2abyss.jpg" alt="scope2"><br>
+                   <p>Scope number 3, Yalahar circles</p><br>
+                   <img src="../screenshots/scopes/scope3circles.jpg" alt="scope3"><br>
+                   <p>Scope number 4, Abyss 2, East side of the city </p><br>
+                   <img src="../screenshots/scopes/scope4.jpg" alt="scope4"><br>
+                   <p>Scope number 5, Abyss 3 </p><br>
+                   <img src="../screenshots/scopes/scope5.jpg" alt="scope5"><br>
+                   <p>Scope number 6, Yalahar Incan empire, South tower of nobles </p><br>
+                   <img src="../screenshots/scopes/scope6.jpg" alt="scope6"><br>
+                   <p>Scope number 7, Yalahar circles, from the checkpoint to East </p><br>
+                   <img src="../screenshots/scopes/scope7.jpg" alt="scope7"><br>
+                   <p>Scope number 8, Chambers of Yalahar </p><br>
+                   <img src="../screenshots/scopes/scope8.jpg" alt="scope8"><br>
+                   <p>Scope number 9, Yalahar, betweeen Incan empire and chambers, noble paradise </p><br>
+                   <img src="../screenshots/scopes/scope9.jpg" alt="scope9"><br>
+                   <p>Scope number 10, Yalahar circles ending, before you use the spaceship key </p><br>
+                   <img src="../screenshots/scopes/scope10.jpg" alt="scope10"><br>
+                   <h2>Phase 2 scopes (30px)</h2><br>
+                   <p>Scope number 11, betweeen Incan empire and chambers, noble paradise </p><br>
+                   <img src="../screenshots/scopes/scope11.jpg" alt="scope11"><br>
+                   <p>Scope number 12, Yalahar chambers </p><br>
+                   <img src="../screenshots/scopes/scope12.jpg" alt="scope12"><br><br>
+                   <p>Scope number 13, Yalahar abysses 3</p><br>
+                   <img src="../screenshots/scopes/scope13.jpg" alt="scope13"><br><br>
+                   <p>Scope number 14, Realms </p><br>
+                   <img src="../screenshots/scopes/scope14.jpg" alt="scope14"><br><br>
+                   <p>Scope number 15, Prison of achernar </p><br>
+                   <img src="../screenshots/scopes/scope15.jpg" alt="scope15"><br><br>
+                   <p>Scope number 16, Realms</p><br>
+                   <img src="../screenshots/scopes/scope16.jpg" alt="scope16"><br><br>
+                   <p>Scope number 17, Realms</p><br>
+                   <img src="../screenshots/scopes/scope17.jpg" alt="scope17"><br><br>
+                   <p>Scope number 18, Edron bossrun 4</p><br>
+                   <img src="../screenshots/scopes/scope18.jpg" alt="scope18"><br><br>
+                   <p>Scope number 19, Realms </p><br>
+                   <img src="../screenshots/scopes/scope19.jpg" alt="scope19"><br><br>
+                   <p>Scope number 20, Abyss 3 </p><br>
+                   <img src="../screenshots/scopes/scope20.jpg" alt="scope20"><br><br>
+                   <p>Scope number 21, Spacewalk</p><br>
+                   <img src="../screenshots/scopes/scope21.jpg" alt="scope21"><br><br>
+                   <p>Scope number 22, Yalahar circles, South at the sewers </p><br>
+                   <img src="../screenshots/scopes/scope22.jpg" alt="scope22"><br><br>
+                   <p>Scope number 23, Realms</p><br>
+                   <img src="../screenshots/scopes/scope23.jpg" alt="scope23"><br><br>
+                   <p>Scope number 24, Realms </p><br>
+                   <img src="../screenshots/scopes/scope24.jpg" alt="scope24"><br><br>
+                   <p>Scope number 25, Abyss 3</p><br>
+                   <img src="../screenshots/scopes/scope25.jpg" alt="scope25"><br><br>
+                   <p>Scope number 26, Realms</p><br>
+                   <img src="../screenshots/scopes/scope26.jpg" alt="scope26"><br><br>
+                   <p>Scope number 27, Edron bossrun 4</p><br>
+                   <img src="../screenshots/scopes/scope27.jpg" alt="scope27"><br><br>
+                   <p>Scope number 28, Abyss 2</p><br>
+                   <img src="../screenshots/scopes/scope28.jpg" alt="scope28"><br><br>
+                   <p>Scope number 29, Realms </p><br>
+                   <img src="../screenshots/scopes/scope29.jpg" alt="scope29"><br><br>
+                   <p>Scope number 30, Abyss 3 </p><br>
+                   <img src="../screenshots/scopes/scope30.jpg" alt="scope30"><br><br>
+                   <p>Scope number 31, Prison of achernar </p><br>
+                   <img src="../screenshots/scopes/scope31.jpg" alt="scope31"><br><br>
+                   <p>Scope number 32, Prison of achernar </p><br>
+                   <img src="../screenshots/scopes/scope32.jpg" alt="scope32"><br><br>
+                   <p>Scope number 33, Prison of achernar</p><br>
+                   <img src="../screenshots/scopes/scope33.jpg" alt="scope33"><br><br>
+                   <p>Scope number 34, Realms </p><br>
+                   <img src="../screenshots/scopes/scope34.jpg" alt="scope34"><br><br>
+                   <p>Scope number 35, Spaceship ending </p><br>
+                   <img src="../screenshots/scopes/scope35.jpg" alt="scope35"><br><br>
+                   <p>Scope number 36, Yalahar cirlces </p><br>
+                   <img src="../screenshots/scopes/scope36.jpg" alt="scope36"><br><br>
+                   <p>Scope number 37, Realms </p><br>
+                   <img src="../screenshots/scopes/scope37.jpg" alt="scope37"><br><br>
+                   <p>Scope number 38, Realms</p><br>
+                   <img src="../screenshots/scopes/scope38.jpg" alt="scope38"><br><br>
+                   <p>Scope number 39, Realms</p><br>
+                   <img src="../screenshots/scopes/scope39.jpg" alt="scope39"><br><br>
+                   <p>Scope number 40, Spacewalk</p><br>
+                   <img src="../screenshots/scopes/scope40.jpg" alt="scope40"><br><br>
+                   <h2>Phase 3 scopes (10px)</h2><br>
+                   <p>Scope number 41,  Prison of achernar ending </p><br>
+                   <img src="../screenshots/scopes/scope41.jpg" alt="scope41"><br><br>
+                   <p>Scope number 42, Prison of achernar</p><br>
+                   <img src="../screenshots/scopes/scope42.jpg" alt="scope42"><br><br>
+                   <p>Scope number 43, Realms, South-east corner </p><br>
+                   <img src="../screenshots/scopes/scope43.jpg" alt="scope43"><br><br>
+                   <p>Scope number 44, Abyss 3 </p><br>
+                   <img src="../screenshots/scopes/scopenum3.jpg" alt="scope44"><br><br>
+                   <p>Scope number 45, Realms North-East corner before hitchhikers / lever</p><br>
+                   <img src="../screenshots/scopes/scope45.jpg" alt="scope45"><br><br>
+                   <p>Scope number 46, Edron bossrun 4 </p><br>
+                   <img src="../screenshots/scopes/scope46.jpg" alt="scope46"><br><br>
+                   <p>Scope number 47, Realms, South-East Death area </p><br>
+                   <img src="../screenshots/scopes/scopenum1.jpg" alt="scope47"><br><br>
+                   <p>Scope number 48, Spacewalk </p><br>
+                   <img src="../screenshots/scopes/scopenum2.jpg" alt="scope48"><br><br>
+                   <p>Scope number 49, Realms</p><br>
+                   <img src="../screenshots/scopes/scope49.jpg" alt="scope49"><br><br>
+                   <p>Scope number 50, Realms</p><br>
+                   <img src="../screenshots/scopes/scope50.jpg" alt="scope50"><br><br>
+                   
+                  
+
+
+
+
+                    
+                    
+                    </div>
+                    <div class="popup-image">
+                        <span>&times;</span>
+                        <img src="../screenshots/icons/Black_Skull_29.webp" alt="">
+                        
+                    </div>
+            </main>         
+           
+        </div> 
+    
+   
+    
+     <script src ="../searchcity.js"></script>
+     <script>
+ document.querySelectorAll(".mushbox img").forEach(image => {
+    image.onclick = () => {
+        const popup = document.querySelector('.popup-image');
+        const popupImg = popup.querySelector('img');
+
+        popup.style.display = 'block';
+        popupImg.src = image.getAttribute('src');
+    }
+});
+
+// Hide popup when clicking outside the image or on the image
+document.querySelector('.popup-image').onclick = () => {
+    document.querySelector('.popup-image').style.display = "none";
+};
+    </script>
+    </body>
+</html>
