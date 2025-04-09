@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html lang="eng" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title> The quests of Outcastserver | By Sugga</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel = "stylesheet" href="../newstyles.css">
+        <script type ="text/javascript" src ="../uusscript.js" defer></script>
+     </head>
+     <style> 
+     .container img{
+        cursor:pointer;
+     }
+     .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 3px solid #fff;
+            border-radius: 10px;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+        .container .mushbox .image:hover img{
+            transform: scale(1.03);
+            transition: 0.3s;
+        }
+        .container .popup-image{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: black;
+            opacity: 97%;
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            display:none;
+        }
+        .container .popup-image span{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-weight: bolder;
+            font-size: 60px;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+        }
+        .container .popup-image img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid white;
+            border-radius: 5px;
+            width: 75%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+       
+        @media(max-width: 768px){
+            .container .popup-image img{
+                width: 70%;
+            }
+        }</style>
+     <body> 
+        
+        <header class="header">Magical mushrooms
+           
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        </header>
+        <nav id="newsidebar" class="open">
+            <!-- -----------------SEARCHBAR---------------- -->
+            <ul class="nav-links">
+               <li>
+                       <span class="logo">Quests of Outcast</span>
+                       <button onclick =toggleSidebar() id="toggle-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                       </button>
+                         </li>
+                         <li>
+                           <button onclick =search(this) id ="search-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                       </button>
+                            <span class="search-container">
+   
+                           <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                           <div id="suggestions" class="suggestions"></div>
+                         </li>
+                         <li class ="active">
+                           <a href="../index.html">
+                               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                               <span>Home</span>
+                           </a>
+                         </li>
+                       <li class ="active">
+                       
+          <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+           <h4>MC</h4>
+           <span>Main city</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="Vroengaard.html">Vroengaard</a></li>
+               <li><a href="Wildwarriorcave.html">Wild warrior cave</a></li>
+               <li><a href="worldteleport.html">World teleport</a></li>
+           </div>
+           </ul>
+           </li>       
+           <li class ="active">
+               
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>CI</h4>
+           <span>Other cities</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Aberon.html">Aberon</a></li>
+               <li><a href="../cities/adicama.html">Adicama</a></li>
+               <li><a href="../cities/drushak.html">Drushak</a></li>
+               <li><a href="../cities/edron.html">Edron/Qutor's grove</a></li>
+               <li><a href="../cities/forbidden.html">Forbidden forest</a></li>
+               <li><a href="../cities/fendal.html">Fendal</a></li>
+               <li><a href="../cities/Lithgow.html">Lithgow</a></li>
+               <li><a href="../cities/Snowmania.html">Snowmania</a></li>
+               <li><a href="../cities/tarid.html">Tarid</a></li>
+               <li><a href="../cities/valmoor.html">Valmoor</a></li>
+           </div>
+       </ul>
+   </li>
+           <li class ="active"> 
+           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+               <h4>FG</h4>
+           <span>Fallen Gods area</span>
+           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+           <ul class="sub-menu">
+               <div>
+              <!-- <li><a href="../../cities/Fallengods/mainarea.html">Main area</a></li> -->
+               <li><a href="../cities/Fallengods/plains.html">Plains of Gold</a></li>
+               <li><a href="../cities/Fallengods/helarctos.html">Helarctos area</a></li>
+               <li><a href="../cities/Fallengods/mysticon.html">Mysticon</a></li>
+               <li><a href="../cities/Fallengods/wreckedship.html">Wrecked ship</a></li>
+               <li><a href="../cities/Fallengods/waterfalls.html">Skyrider waterfalls</a></li>
+           </div>
+        </ul>
+       </li>
+           <li>
+               <li class ="active">
+               
+                   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                       <h4>EB</h4>
+                   <span>Edron bossrun</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                   </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/Bossrun/spaceshipkey.html">Spaceship key</a></li>
+               <li><a href="../cities/Bossrun/axxion.html">Underworld Axxion</a></li>
+               <li><a href="../cities/Bossrun/beluna.html">Beluna</a></li>
+               <li><a href="../cities/Bossrun/desert.html">Desert of Zenith</a></li>
+               <li><a href="../cities/Bossrun/yalahar.html">Yalahar</a></li>
+           </div>
+               
+   
+          </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>KF</h4>
+               <span>Kingdom farmlands</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+               <div>
+               <li><a href="../cities/kf/kingdom1.html">Kingdom farmlands part 1</a></li>
+               <li><a href="../cities/kf/kingdom2.html">Kingdom farmlands part 2</a></li>
+               <li><a href="../cities/kf/kingdom3.html">Kingdom farmlands part 3</a></li>
+               <li><a href="../cities/kf/ebr3.html">Edron bossrun 3</a></li>
+           </div>
+           </ul>
+           </li>
+           <li class ="active">
+               
+               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                   <h4>AB</h4>
+               <span>Abysses of Achernar</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+               </button>
+           <ul class="sub-menu">
+           <div>
+               <li><a href="../cities/abyss/abyss1.html">Yalahar abbyses of Achernar 1</a></li>
+               <li><a href="../cities/abyss/abyss2.html">Yalahar abbyses of Achernar 2</a></li>
+               <li><a href="../cities/abyss/abyss3.html">Yalahar abbyses of Achernar 3</a></li>
+               <li><a href="../cities/abyss/spacewalk.html">Spacewalk</a></li>
+               <li><a href="../cities/abyss/prison.html">Prison of Achernar</a></li>
+           </div>
+        </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>SE</h4>
+   <span>Set upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href="../cities/setupgrades/darkwarrior.html">Dark warrior set</a></li>
+   <li><a href="../cities/setupgrades/zenith.html">Zenith set</a></li>
+   <li><a href="../cities/setupgrades/draconian.html">Draconian set</a></li>
+   <li><a href="../cities/setupgrades/fallen.html">Fallen gods set</a></li>
+   <li><a href="../cities/setupgrades/hela.html">Helarctos set</a></li>
+   <li><a href="../cities/setupgrades/overlord.html">Dark overlord set</a></li>
+   <li><a href="../cities/setupgrades/cyclip.html">Cyclip set</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>WP</h4>
+   <span>Weapon & shield upgrades</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/other/fullhota.html">Full helmet of the ancients</a></li>
+<li><a href="../cities/other/endy.html">Endymions & Archmage wands upgrade</a></li>
+   <li><a href="../cities/other/skywep.html">Oceanic lizard weapon</a></li>
+   <li><a href="../cities/other/cycshield.html">Tusk, Rose or Honour shield</a></li>
+   <li><a href="../cities/other/ocshield.html">Cyclip shield</a></li>
+   <li><a href ="../cities/other/skyshield.html">Oceanic lizard shield</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+       <h4>AC</h4>
+   <span>Access quests</span>
+   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+   </button>
+   <ul class="sub-menu">
+   <div>
+   <li><a href ="../cities/access/abysskfaccess.html">Yalahar abysses & Farmlands</a></li>
+   <li><a href ="../cities/access/farmpitsaccess.html">Farmpits</a></li>
+   <li><a href ="../cities/access/realmaccess.html">Hitchhiker realms</a></li>
+   <li><a href ="../cities/access/spaceshipaccess.html">Yalahar spaceship</a></li>
+   <li><a href ="../cities/access/dunesaccess.html">Dunes of Darkness</a></li>
+   </div>
+   </ul>
+   </li>
+   <li class ="active">
+               
+    <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+        <h4>OT</h4>
+    <span>Other</span>
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+    </button>
+    <ul class="sub-menu">
+    <div>
+    <li><a href ="../cities/shrooms.html">Mushrooms by city</a></li>
+<li><a href="../cities/ordershrooms.html">Mushrooms by number</a></li>
+    </div>
+    </ul>
+    </li>
+   
+   </ul>
+   </nav>
+        <div class="container">
+            <main>  
+                <div class="mushbox">
+
+                    <h1>Magic mushrooms of Outcast</h1><br>
+                    <p>Gen 1: 95/100<br>
+                        Gen 2: 47/50<br>
+                        Gen 3: 37/50<br>
+                        Gen 4: 36/50
+  </p>
+  <h2>Generation 1</h2>
+  <p>1-A Forbidden forest North-west corner</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbidden2.webp" alt="1-A"><br>
+
+<p>2-A Game hall teleport</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk8.webp" alt="2-A"><br>
+ <p>3-A Tempest shield quest</p><br>
+                    <img src="../screenshots/shrooms/Main city/main2.webp" alt="3-A"><br>
+<p>4-A Elite lands</p><br>
+                    <img src="../screenshots/shrooms/Main city/spiderislands.webp" alt="4-A"><br>
+<p>5-A Jungle, east</p><br>
+                    <img src="../screenshots/shrooms/Main city/jungleeastt.webp" alt="5-A">
+<img src="../screenshots/shrooms/Main city/jungleeast.webp" alt="5-A"><br>
+
+<p>6-A Adicama South</p><br>
+                    <img src="../screenshots/shrooms/Adicama/6-A (Adicama south).png" alt="6-A"><br>
+<p>7-A Aberon jungle</p><br>
+                    <img src="../screenshots/shrooms/Aberon/Aberon_1.webp" alt="7-A"><br>
+<p>8-A Tarid East side nobles, Full HOTA quest area</p><br>
+                    <img src="../screenshots/shrooms/Tarid/8-A_Tarid_nobles.jpg" alt="8-A">
+ <p>10-A Snowmania, Dark warrior set quest</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/darkwarriorset.webp" alt="10-A"><br>
+<p>11-A Tarid orc fortress</p><br>
+                    <img src="../screenshots/shrooms/Tarid/11-A (Tarid orc fortress2).png" alt="11-A"><br>
+ <p>12-A Jungle, South</p><br>
+                    <img src="../screenshots/shrooms/Main city/junglesouth.webp" alt="jungle"><br>
+ <p>13-A Aberon jungle</p><br>
+                    <img src="../screenshots/shrooms/Aberon/Aberon_3.webp" alt="13-A"><br>
+ <p>14-A Mysticon area way to first stone boss, the magician to the West</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon_14-A.jpg" alt="14-A"><br>
+ <p>15-A North of main city, warlock/demon area</p>
+                    <img src="../screenshots/shrooms/Main city/north2.1.webp" alt="">
+                    <img src="../screenshots/shrooms/Main city/north_2.2.webp" alt="">
+                    <img src="../screenshots/shrooms/Main city/north_2.3.webp" alt="15-A"><br>
+ <p>16-A Valmoor</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk4.webp" alt="16-A"><br>
+ <p>17-A Tarid, Full HOTA quest black sheeps</p><br>
+                    <img src="../screenshots/shrooms/Tarid/17-A_Tarid_black_sheep_south_east_village.jpg" alt="17-A">
+ <p>18-A Beluna ending, 3 surphyres</p><br>
+                    <img src="../screenshots/shrooms/Beluna/18-A_Beluna_end.jpg" alt="18-A"><br>
+<p>19-A North side of Edron</p><br>
+                    <img src="../screenshots/shrooms/edron/edron_19-A.jpg" alt="19-A"><br>
+ <p>20-A Yalahar circles, North</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/yalaharcirlcesup.png" alt="20-A"><br>
+ <p>21-A Skyrider shield city area</p><br>
+                    <img src="../screenshots/shrooms/skyshield/21-A_village_north_od_skyrider_cp2.jpg" alt="21-A"><br>
+<p>22-A depot -2 football teleport</p><br>
+                     <img src="../screenshots/shrooms/Main city/22-A.footballarena.png" alt="22-A"><br>
+  <p>23-A Drushak, harashaki quest</p><br>
+                    <img src="../screenshots/shrooms/Drushak/drushak1.webp" alt="23-A"><br>
+ <p>24-A Spider islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/spiderlands.webp" alt="24-A"><br>
+  <p>25-A Warlocks area, burning heart quest?</p><br>
+                    <img src="../screenshots/shrooms/Main city/warlocks1.webp" alt="25-A"><br>
+<p>26-A Aberon jungle</p><br>
+                    <img src="../screenshots/shrooms/Aberon/jungle1.webp" alt="26-A"><br>
+<p>27-A Soft boots quest area, ending. Mushroom is south-east from teleport</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/softboots.webp" alt="27-A"><br>
+ <p>29-A magicians, Fallen gods</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/29-A_Fallen_Gods_Mysticon_tele.jpg" alt="29-A"><br>
+   <p>31-A Tarid, Deathlands, graveyard at North, bright sword / hota piece quest</p><br>
+                    <img src="../screenshots/shrooms/Tarid/deathlands.webp" alt="31-A"><br>
+ <p>32-A Axxion/endy wand upgrade quest</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/32-A_endywand.jpg" alt="32-A"><br>
+ <p>33-A Somber inferno</p><br>
+                    <img src="../screenshots/shrooms/Main city/somberinferno.webp" alt="33-A"><br>
+ <p>34-A Valmoor North area trolls</p><br>
+                    <img src="../screenshots/shrooms/valmoor/valmoor1.1.webp" alt="34-A">
+                    <img src="../screenshots/shrooms/valmoor/valmoor1.webp" alt="34-A">
+<p>35-A Zenith set quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset.webp" alt="35-A"><br>
+<p>36-A Mysticon, East from checkpoint</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon2.webp" alt="36-A"><br>
+<p>37-A Forbidden forest beginning</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbiddenstart.webp" alt="37-A"><br>
+ <p>38-A Forbidden forest underground</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbiddenunder.webp" alt="38-A"><br>
+ <p>39-A Yalahar Incan empire, Northern part</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/incanempire1.webp" alt="39-A"><br> 
+<p>40-A Mysticon, West side of the last area</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon_40-A.jpg" alt="40-A"><br>
+ <p>41-A Oceanic lizard shield area, North-east</p><br>
+                    <img src="../screenshots/shrooms/ocshield/ocshield1.webp" alt="41-A"><br>
+<p>42-A Yalahar dark mountains, West side stairs down</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/yalahardark1.webp" alt="42-A"><br>
+ <p>43-A Yalahar inner circles</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/yalaharinner1.webp" alt="43-A"><br>
+ <p>44-A Yalahar Chambers (No picture Yet)</p><br>
+ <p>45-A Qutor's grove, Far to the West</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk1.webp" alt="45-A"><br>
+  <p>46-A Beluna, West side downstairs, where's panda boss</p><br>
+                    <img src="../screenshots/shrooms/Beluna/beluna2.webp" alt="46-A"><br>
+<p>47-A Bossrun 2 area, near teleport to Zenith</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/47-A_close_to_desert_of_zenith_tp.jpg" alt="47-A"><br>
+<p>48-A Wrecked ship, with some demons</p><br>
+                    <img src="../screenshots/shrooms/wrecked/wrecked2.webp" alt="48-A"><br>
+<p>49-A Near entrance to Dunes</p><br>
+                    <img src="../screenshots/shrooms/desert/desert1.webp" alt="49-A"><br>
+<p>50-A Kf1, Far to the East</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf1se.webp" alt=""><br>
+<p>51-A Dragon islands</p><br>
+                     <img src="../screenshots/shrooms/Main city/dragonisland.webp" alt="51-A"><br>
+<p>53-A North-East area of main city</p><br>
+                    <img src="../screenshots/shrooms/Main city/northcity.webp" alt="53-A"><br>
+<p>54-A Spider islands</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk11.webp" alt="54-A"><br>
+<p>55-A Adicama West</p><br>
+                    <img src="../screenshots/shrooms/Adicama/55-A (Adicama).png" alt="55-A"><br>
+<p>56-A Elite lands</p><br>
+                    <img src="../screenshots/shrooms/Main city/elitelands.webp" alt="56-A"><br>
+  <p>57-A Game hall teleport</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk9.webp" alt="57-A"><br>
+<p>58-A Tempest shield quest</p><br>
+                    <img src="../screenshots/shrooms/Adicama/58-A_tempest_shield_quest_room.jpg" alt="58-A">
+ <p>59-A Farmpit</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/fpit2.webp" alt=""><br>
+<p>60-A Edron North East area</p>
+                    <img src="../screenshots/shrooms/edron/edronnortheast.webp" alt="60-A"><br>
+<p>61-A Aberon jungle</p><br>
+                    <img src="../screenshots/shrooms/Aberon/aberon_2.webp" alt="61-A"><br>
+ <p>62-A Oceanic lizard weapon quest path</p><br>
+                    <img src="../screenshots/shrooms/Tarid/taridocwep.webp" alt=""><br>
+ <p>63-A Tarid orc fortress</p><br>
+ <img src="../screenshots/shrooms/Tarid/63-A (Tarid orc fortress).png" alt="63-A"><br>
+
+ <p>65-A Kf 1 East from checkpoint</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf1eastfromcp.webp" alt=""><br>
+ <p>66-A Edron orcs</p><br>
+                    <img src="../screenshots/shrooms/edron/edronsouth.png" alt="66-A"><br>
+ <p>67-A Forbidden forest far North</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/forbidden3.webp" alt="67-A"><br>
+ <p>68-A Gem quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/gemquestarea.webp" alt="68-A"><br>
+<p>69-A Procyon's lair</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/plair2.webp" alt=""><br>
+ <p>70-A Mysticon main area</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon3.webp" alt="70-A"><br>
+ <p>71-A Forgotten islands</p><br>
+                    <img src="../screenshots/shrooms/Main city/forgotten.webp" alt="71-A"><br>
+  <p>72-A Skyrider shield area</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshieldmush.webp" alt="72-A"><br>
+ <p>73-A Abyss 2 East side of the city</p><br>
+                    <img src="../screenshots/shrooms/Abyss/abyss21.webp" alt="73-A"><br>
+ <p>74-A Yalahar Incan empire, North</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/74-A_yalahar_incan_empire.jpg" alt="74-A"><br>
+ <p>75-A Valmoor city</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk6.webp" alt="75-A"><br>
+ <p>76-A Valmoor</p>
+                    <img src="../screenshots/shrooms/Unidentified/idk5.webp" alt=""><br>
+ <p>77-A Lithgow South-east corner</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/lithgow2.webp" alt="77-A"><br>
+ <p>78-A Tarid city</p><br>
+                    <img src="../screenshots/shrooms/Tarid/78_gen1_-_Tarid.jpg" alt="78-A"><br>
+ <p>79-A Beluna hell</p><br>
+                    <img src="../screenshots/shrooms/Beluna/belunahell.webp" alt="79-A"><br>
+ <p>80-A Sky wep area</p><b></b>
+                    <img src="../screenshots/shrooms/Beluna/beluna1.webp" alt="80-A"><br>
+  <p>81-A Zenith set quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset1.webp" alt="81-A"><br>
+  <p>82-A Way to Cyclip shield quest, krampus house in the city</p><br>
+                    <img src="../screenshots/shrooms/Plains/82-A (plains passing to cyclip shield quest -desert).png" alt="82-A"><br>
+ <p>83-A Map of Rose shield area, hidden under a tree</p><br>
+                    <img src="../screenshots/shrooms/Plains/83-A_Plains_Cyclip_shield_quest.jpg" alt="83-A"><br>
+ <p>84-A Fallen gods, upstairs from behemoths</p><br>
+                    <img src="../screenshots/shrooms/Plains/84-A (Fallen up).png" alt="84-A">
+  <p>85-A Magicians creek North-east place</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainsmcreek1.webp" alt="85-A"><br>
+  <p>86-A Gem quest area</p>
+                    <img src="../screenshots/shrooms/Unidentified/idk3.webp" alt="86-A"><br>
+  <p>87-A Football area</p><br>
+                    <img src="../screenshots/shrooms/Main city/football.webp" alt="87-A"><br>
+  <p>88-A Dragon islands</p><br>
+                     <img src="../screenshots/shrooms/Main city/dragons2.webp" alt="88-A"><br>
+  <p>89-A after Evil Limp, that is blocking the stone</p><br>
+                    <img src="../screenshots/shrooms/Plains/Plains_-_Gen_1_-_ID_89.jpg" alt="89-A"><br>
+                    <p>90-A Plains area, first city</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainscity1.webp" alt="90-A"><br>
+  <p>91-A Warlock area, Full ectoplasma quest</p><br>
+                    <img src="../screenshots/shrooms/Main city/main1.webp" alt="91-A"><br>
+ <p>92-A Wild warrior cave, West stairs "Old widow library"</p><br>
+                    <img src="../screenshots/shrooms/Main city/main_city_south_underground.webp" alt="92-A"><br>
+  <p>93-A Mysticon, far to the West</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon4.webp" alt="93-A"><br>
+ <p>94-A Mysticon, after long path</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon1.webp" alt="94-A"><br>
+  <p>95-A Axxion, Panda bear quest</p>
+                    <img src="../screenshots/shrooms/Unidentified/idk7.webp" alt="95-A"><br>
+  <p>96-A Skyrider shield, from cp2 underground the tower</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshield1.webp" alt="96-A"><br>
+ <p>97-A Way to chambers, East side Nobles</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/97-A_chambers_noble_armor_cave.jpg" alt="97-A"><br>
+ <p>98-A Tarid Boots of haste quest on the South-East tower, South from city</p><br>
+                    <img src="../screenshots/shrooms/Tarid/98_gen1_-_Tarid.jpg" alt="98-A"><br>
+
+<p>99-A Desert, West side</p><br>
+                    <img src="../screenshots/shrooms/desert/desert.webp" alt=""><br>
+ <p>100-A Mysticon, most Northern part of the island</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/idk2.webp" alt="100-A"><br>
+
+                    <h2>Generation 2</h2>
+
+<p>101-B Tarid city, middle arena</p><br>
+                    <img src="../screenshots/shrooms/Tarid/tarid1.webp" alt=""><br>
+ <p>102-B Golden boots quest</p><br>
+                    <img src="../screenshots/shrooms/Main city/gboots.webp" alt="102-B"><br>
+<p>103-B Realms South-East</p><br>
+                    <img src="../screenshots/shrooms/Realms/realms4.webp" alt="103-B"><br>
+ 
+                    <p>104-B Realms, near Draconir checkpoint</p><br>
+                    <img src="../screenshots/shrooms/Realms/realms1.webp" alt=""><br>
+  <p>105-B Yalahar inner circles</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/yalaharinner2.webp" alt="105-B"><br>
+  <p>106-B Abyss 3 after cobra teleport</p><br>
+                    <img src="../screenshots/shrooms/Abyss/106-B.abyss3up.png" alt="106-B"><br>
+                    <p>107-B Abyss 3 after cobra teleport</p>
+                    <img src="../screenshots/shrooms/Abyss/107-B.abyss3up.png" alt="107-B"><br>
+ <p>108-B Realms Far to the East</p><br>
+                    <img src="../screenshots/shrooms/Realms/realms5.webp" alt="108-B"><br>
+<p>109-B after making 1 of the spaceship quest upgrades</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/spaceshipdone.webp" alt="109-B"><br>
+<p>110-B edron bossrun 4</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr42.webp" alt=""><br>
+  <p>111-B Ebr 4 West side</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr44.webp" alt=""><br>
+<p>112-B Oceanic lizard weapon, house</p><br>
+                    <img src="../screenshots/shrooms/Tarid/ocwep.webp" alt="112-B"><br>
+  <p>113-B Skyrider shield, second last place</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshield2.webp" alt="113-B"><br>
+  <p>114-B Deeper banuta</p><br>
+                    <img src="../screenshots/shrooms/Aberon/deeperbanuta.webp" alt="114-B"><br>
+<p>115-B Abyss 2, Northern part upstairs, small house</p><br>
+                    <img src="../screenshots/shrooms/Abyss/abyss22.webp" alt="115-B"><br>
+ <p>116-B Blackhole</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/black_hole.webp" alt=""><br>
+ <p>118-B Procyon's lair</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/plair1.webp" alt="118-B"><br>
+  <p>119-B Mountain of Desert of Zenith</p><br>
+                    <img src="../screenshots/shrooms/desert/desertup.webp" alt=""><br>
+ <p>120-B Wrecked ship ending, before rewards</p>
+                    <img src="../screenshots/shrooms/wrecked/wrecked1.webp" alt="120-B"><br>
+ <p>121-B Spaceship ending</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/spaceshiplast.webp" alt="121-B"><br>
+<p>122-B kf3</p>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf3down.webp" alt=""><br>
+ <p>123-B Kf 2 Hamsters</p>
+                    <img src="../screenshots/shrooms/kingdomfarms/kfhamsters.webp" alt="123-B"><br>
+   <p>124-B Sky weapon area, East from stairs</p><br>
+                    <img src="../screenshots/shrooms/Beluna/skywep1.webp" alt="124-B"><br>
+   <p>125-B Valmoor, Batman's house</p><br>
+                    <img src="../screenshots/shrooms/valmoor/valmoormush.png" alt="125-B"><br>
+ <p>126-B Adicama, Eastern exp doors</p><br>
+                    <img src="../screenshots/shrooms/Adicama/adicama1.webp" alt="126-B"><br>
+                    <p>127-B Abyss 1, colosseum North stair up</p><br>
+                    <img src="../screenshots/shrooms/Abyss/abyss1middleareanorth.webp" alt="127-B"><br>
+<p>128-B Mysticon, before reward room, south</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticonlast.webp" alt="128-B"><br>
+ <p>129-B Spacewalk</p><br>
+                    <img src="../screenshots/shrooms/spacewalk/spacewalk.webp" alt="129-B"><br>
+<p>130-B Prison</p><br>
+                    <img src="../screenshots/shrooms/Abyss/prison4.webp" alt="130-B"><br>
+ <p>131-B Prison</p>
+                    <img src="../screenshots/shrooms/Abyss/prison1.webp" alt="131-B"><br>
+                    <p>132-B Prison</p><br>
+                    <img src="../screenshots/shrooms/Abyss/prison2.webp" alt="132-B"><br>
+ <p>133-B Ebr4 ending</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr41.webp" alt=""><br>
+ <p>134-B Realms, North-East corner with hitchhiker's</p><br>
+                    <img src="../screenshots/shrooms/Realms/realmshitch.webp" alt="134-B"><br>
+ <p>135-B Edron bossrun 4, South house upstairs</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr43.webp" alt=""><br>
+ <p>136-B Prison</p><br>
+                    <img src="../screenshots/shrooms/Abyss/prison3.webp" alt="136-B"><br>
+                    
+                    <p>137-B Prison</p><br>
+                    <img src="../screenshots/shrooms/Abyss/prison5.webp" alt="137-B"><br>
+                    <p>138-B prison</p><br>
+                    <img src="../screenshots/shrooms/Abyss/138-B_achernar_prison.jpg" alt="138-B"><br>
+<p>139-B Realms South-East</p><br>
+                    <img src="../screenshots/shrooms/Realms/realms3.webp" alt="139-B"><br>
+<p>140-B Plains, demons area underground</p><br>
+                    <img src="../screenshots/shrooms/Plains/plains1.webp" alt=""><br>
+<p>141-B Skyrider shield, last place</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshieldend1.webp" alt="141-B"><br>
+<p>143-B From magicians creek cp, west side house</p><br>
+                    <img src="../screenshots/shrooms/Plains/plains2.webp" alt="143-B"><br>
+ <p>144-B Spacewalk</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/spaceship.webp" alt="144-B"><br>
+<p>145-B Plains area at the stone lever area</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainsdrags.webp" alt=""><br>
+<p>146-B Yalahar inner circles, near downstairs to hybrids</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/circles_146.jpg" alt="146-B"><br>
+<p>147-B Main city area quest</p><br>
+                    <img src="../screenshots/shrooms/Main city/somequest.webp" alt="147-B"><br>
+<p>148-B Lithgow North-west corner</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/lithgow1.webp" alt="148-B"><br>
+<p>150-B Axxion labyrinth</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/axxion1.webp" alt="150-B"><br>
+
+                    <h2>Generation 3</h2>
+
+<p>151-C Beluna hell</p><br>
+                    <img src="../screenshots/shrooms/Beluna/151-C.beluna.jpg" alt="151-C"><br>
+<p>152-C Spydyr 1</p><br>
+                    <img src="../screenshots/shrooms/Realms/spydyr1.webp" alt=""><br>
+ <p>153-C Depot, trainers</p><br>
+                     <img src="../screenshots/shrooms/Main city/depottrainers.webp" alt="153-C"><br>
+ <p>154-C Depot, main city</p><br>
+                     <img src="../screenshots/shrooms/Main city/depot.webp" alt="154-C"><br>
+ <p>155-C spaceship stairs, last place</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/spaceshipstairs.webp" alt="155-C"><br>
+ <p>158-C Abyss 2</p><br>
+                    <img src="../screenshots/shrooms/Abyss/abyss2eastcity.webp" alt="158-C"><br>
+ <p>159-C Red carpet</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/redcarpet.webp" alt="159-C"><br>
+ <p>161-C Mysticon. Wizard boss is to the West from here.</p>
+                    <img src="../screenshots/shrooms/Mysticon/mysticonwest.webp" alt="161-C"><br>
+<p>162-C East side</p><br>
+                    <img src="../screenshots/shrooms/Realms/162-C_realms.jpg" alt="162-C"><br>
+<p>163-C Beluna place after lever hell</p><br>
+                    <img src="../screenshots/shrooms/Beluna/belunabeforetp.webp" alt="163-C"><br>
+<p>164-C Spacewalk end before teleport to Prison (NO PICTURE YET)</p><br>
+ <p>165-C Beluna hell</p><br>
+                    <img src="../screenshots/shrooms/Beluna/Beluna_Checkpoint_1_-_Gen_1_-_ID_165.jpg" alt="165-C"><br>
+<p>168-C Plains checkpoint</p><br>
+                    <img src="../screenshots/shrooms/Plains/plainscp.webp" alt="168-C"><br>
+ <p>169-C Realms, draconir city wall</p><br>
+                    <img src="../screenshots/shrooms/Realms/realmsdraccity.webp" alt="169-C"><br>
+ <p>170-C Qutor's grove far East</p><br>
+                    <img src="../screenshots/shrooms/edron/170-C (Qutor's grave far east).png" alt="170-C"><br>
+ <p>171-C Mysticon, last area. West place, ladders are South</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon northwestladders.webp" alt="171-C"><br>
+<p>172-C Zenith set quest area</p><br>
+                    <img src="../screenshots/shrooms/Lithgow/zenithset2.webp" alt="172-C"><br>
+                   
+<p>173-C Way to Spaceship key quest</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr2.webp" alt=""><br>
+<p>174-C Between Yalahar circles and spaceship under 2 skulls</p><br>
+                    <img src="../screenshots/shrooms/Yalahar/betweencirclesspaceship.webp" alt="174-C"><br>
+ <p>175-C Kf 1 checkpoint</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf1cp.webp" alt="175-C"><br>
+ <p>177-C kf3 downstairs to the East</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf3skulls.webp" alt=""><br>
+<p>179-C Mysticon quest area, after serpent boss. West side stairs down and go south-west.</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticonquest.webp" alt="179-C">
+                    <img src="../screenshots/shrooms/Mysticon/mysticonquest1.1.webp" alt=""><br>
+ <p>180-C Ebr 4 ending</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr4ending.webp" alt=""><br>
+ <p>181-C On the way to edron bossrun 5</p><br>
+                    <img src="../screenshots/shrooms/ebr5/onthewayebr5.webp" alt="181-C"><br>
+ <p>182-C South from Bossrun 5 checkpoint</p><br>
+                    <img src="../screenshots/shrooms/ebr5/ebr5beginning.webp" alt="182-C"><br>
+ <p>183-C West side of the bigger area in Bossrun 5 </p><br>
+                    <img src="../screenshots/shrooms/ebr5/tectonic_ebr5.183-C.jpg" alt="183-C"><br>
+ <p>184-C Kingdom farmlands 3</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf3ropes.webp" alt=""><br>
+ <p>185-C Bullcity</p><br>
+                    <img src="../screenshots/shrooms/Unidentified/bullcityship.webp" alt="185-C"><br>
+<p>187-C Red carpet underground</p><br>
+<p>188-C Main city, North-East area</p><br>
+                    <img src="../screenshots/shrooms/Main city/188_gen3_-_Main_City.jpg" alt="188-C"><br>
+<p>190-C Tarid boots of haste quest/ black knight village</p><br>
+                    <img src="../screenshots/shrooms/Tarid/190-C_taridboh.jpg" alt="190-C"><br>
+ <p>191-C Qutor's grove</p><br>
+                    <img src="../screenshots/shrooms/edron/191-C (Qutor's grave).png" alt="191-C"><br>
+ <p>192-C Mysticon first area, East side</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/mysticon_-_gen_3_-_192.jpg" alt="192-C">
+ <p>195-C Waterfalls checkpoint 2, tower nearby</p><br>
+                    <img src="../screenshots/shrooms/skyshield/skyshieldhouse.webp" alt=""><br>
+<p>198-C</p><br>
+                    <img src="../screenshots/shrooms/ebr5/198-C.jpg" alt="198-C"><br>
+ <p>199-C Snowmania, Dark warrior set quest</p><br>
+                    <img src="../screenshots/shrooms/snowmania/199_-_gen_3_-_snowmania.jpg" alt="199-C"><br>
+
+                    <h2>Generation 4</h2>
+<p>201-D Edron boat</p><br>
+                    <img src="../screenshots/shrooms/edron/edronboat.webp" alt="201-D"><br>
+<p>202-D Tarid middle mountain</p><br>
+                    <img src="../screenshots/shrooms/Tarid/202-D (Tarid middle moutain).png" alt="202-D"><br>
+<p>203-D Procyon's lair</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf2_to_procyon_lair.webp" alt="203-D"><br>
+ <p>205-D Spydyr area</p><br>
+                    <img src="../screenshots/shrooms/ebr5/4gen_205-D_Bossrun_5_spydyr.jpg" alt="205-D"><br>
+ <p>206-C</p><br>
+                    <img src="../screenshots/shrooms/ebr5/206-D_ebr5.jpg" alt="206-C"><br>
+  <p>207-D Adicama city</p><br>
+                    <img src="../screenshots/shrooms/Adicama/207-D (Adicama).png" alt="207-D"><br>
+<p>208-D Dunes</p><br>
+                    <img src="../screenshots/shrooms/desert/innerdunes.webp" alt="208-D"><br>
+  <p>209-D Bullish city</p><br>
+                    <img src="../screenshots/shrooms/Plains/209-D (bullish city).png" alt="209-D"><br>
+ <p>211-D Jungle</p><br>
+                    <img src="../screenshots/shrooms/Main city/211-D_jungle.jpg" alt="211-D"><br>
+ <p>212-D near Farmpits checkpoint 2</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/Farmpit_-_gen_4_-_212.jpg" alt="212-D"><br>
+ <p>213-D</p><br>
+                    <img src="../screenshots/shrooms/ebr5/213_gen_4_bossrun_5.jpg" alt="213-D"><br>
+                    <p>214-D</p><br>
+                    <img src="../screenshots/shrooms/ebr5/214-D_bossrun_5_gen_4.jpg" alt="214-D"><br>
+ <p>216-C KF2</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/KF2_216-C.jpg" alt="216-C"><br>
+ <p>217-D Forbidden forest</p><br>
+                    <img src="../screenshots/shrooms/Forbidden/ForbiddenForest_-_Gen_4_-_217.jpg" alt="217-D"><br>
+ <p>218-D City teleports</p><br>
+                     <img src="../screenshots/shrooms/Main city/cityteleports.webp" alt="218-D"><br>
+ <p>221-D Skyrider waterfall checkpoint 1</p><br>
+                    <img src="../screenshots/shrooms/skyshield/221-D-Skyrider_Waterfal_CP_1.jpg" alt="221-D"><br>
+                    <p>223-D Skyrider waterfall checkpoint 1</p><br>
+                    <img src="../screenshots/shrooms/skyshield/223-D_skyrider_cp_1.jpg" alt="223-D">
+ <p>225-D Abyss 1 colosseum</p><br>
+                    <img src="../screenshots/shrooms/Abyss/Abyss_1_-_Gen_4_-_225.jpg" alt="225-D"><br>
+ <p>226-D Chambers</p>
+                    <img src="../screenshots/shrooms/Yalahar/chamberswest.webp" alt="226-D"><br>
+
+ <p>227-D Abyss 2</p><br>
+                    <img src="../screenshots/shrooms/Abyss/abyss2_227-C.jpg" alt="227-D"><br>
+ <p>228-D Abyss 1 colosseum underground</p><br>
+                    <img src="../screenshots/shrooms/Abyss/Abyss_1_-_gen_4_-_228.jpg" alt="228-D"><br>
+ <p>232-D</p><br>
+                    <img src="../screenshots/shrooms/ebr5/232-D_gen_4_bossrun_5_end.jpg" alt="232-D"><br>
+<p>234-D Farmpit, procyon/giants</p><br>
+                    <img src="../screenshots/shrooms/kingdomfarms/fpit3procs.webp" alt="234-D"><br>
+                     <p>235-D Depot upstairs</p><br>
+                     <img src="../screenshots/shrooms/Main city/235-D_Vroengard_depot_2.jpg" alt="235-D"><br>
+<p>236-D</p><br>
+                    <img src="../screenshots/shrooms/ebr5/ebr5_235-D.jpg" alt="236-D"><br>
+<p>237-D Adicama dragons mountain</p><br>
+                    <img src="../screenshots/shrooms/Adicama/237-D (Adicama dragons moutain).png" alt="237-D"><br>
+
+ <p>238-D Kingdom farmlands 3</p>
+                    <img src="../screenshots/shrooms/kingdomfarms/kf3mountain.webp" alt=""><br>
+  <p>239-D Spaceship upgrade room (Roc head->spacestick)</p>
+                    <img src="../screenshots/shrooms/Yalahar/spaceshiprocheadupgrade.webp" alt="239-D"><br>
+<p>240-D Edron bossrun 4</p><br>
+                    <img src="../screenshots/shrooms/Bossrun/ebr4southwest.webp" alt=""><br>
+<p>241-D Beluna South, demodrases</p><br>
+                    <img src="../screenshots/shrooms/Beluna/belunademodrases.webp" alt="241-D"><br>
+<p>242-D Valmoor quest</p><br>
+                    <img src="../screenshots/shrooms/valmoor/242-D.Valmoor_east.jpg" alt="242-D"><br>
+<p>243-D Edron orcs</p>
+                    <img src="../screenshots/shrooms/edron/edronorcs.webp" alt="243-D"><br>
+<p>244-D Tarid far to the East</p><br>
+                    <img src="../screenshots/shrooms/Tarid/244-D (Tarid far east).png" alt="244-D"><br>
+<p>245-D main city, East side</p><br>
+                    <img src="../screenshots/shrooms/Main city/245_gen4.jpg" alt="245-D"><br>
+<p>247-D Mysticon, after long path</p><br>
+                    <img src="../screenshots/shrooms/Mysticon/Mysticon_gen_4_-_247.jpg" alt="247-D"><br>
+ <p>250-D Drushak demons</p><br>
+                    <img src="../screenshots/shrooms/Drushak/250-D (Drushak).png" alt="250-D"><br>
+
+
+                 
+                    <p>Sky weapon area, ending</p><br>
+                    <img src="../screenshots/shrooms/Beluna/skywepend.webp" alt=""><br>
+             
+                    <h2>Edron boss run 5</h2><br>
+
+                    <img src="../screenshots/shrooms/ebr5/ebr5.webp" alt=""><br>
+          
+                    <p> 
+                        In need of pictures:
+                        44-A Yalahar Chambers
+                        164-C Spacewalk ending
+                        </p><br>
+                   
+                    
+                    
+                    </div>
+                    <div class="popup-image">
+                        <span>&times;</span>
+                        <img src="../screenshots/icons/Black_Skull_29.webp" alt="">
+                        
+                    </div>
+            </main>         
+           
+        </div> 
+    
+   
+    
+     <script src ="../searchcity.js"></script>
+     <script>
+ document.querySelectorAll(".mushbox img").forEach(image => {
+    image.onclick = () => {
+        const popup = document.querySelector('.popup-image');
+        const popupImg = popup.querySelector('img');
+
+        popup.style.display = 'block';
+        popupImg.src = image.getAttribute('src');
+    }
+});
+
+// Hide popup when clicking outside the image or on the image
+document.querySelector('.popup-image').onclick = () => {
+    document.querySelector('.popup-image').style.display = "none";
+};
+    </script>
+    </body>
+</html>
