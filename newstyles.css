@@ -275,7 +275,9 @@ input[type="text"] {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(158, 21, 21);
     grid-template-columns: 1fr 1fr auto;
+    justify-self: center;
 }
+/* Quest contents or list as you might say -----------------------------------------*/
 .contents{
     padding: 20px;
     position: flex;
@@ -307,6 +309,9 @@ input[type="text"] {
 .contents ul > li > p > a:hover{
     color: blue;
 }
+/* Contents end---------------------------------------- */
+
+/* Mushroom sites ------------------------------------- */
 
 .mushbox{
     padding: 20px;
@@ -337,6 +342,7 @@ input[type="text"] {
     font-size: 20px;
     
 }
+/* Mushroom sites ------------------------------------- */
 .box p {
     font-size: 20px;
 }
@@ -374,12 +380,10 @@ input[type="text"] {
     
 }
 summary::before {
-  content: '▶';                  /* Custom arrow */
+  content: '▶';
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 16px;
-  transition: transform 0.2s;
 }
 
 /* Rotate arrow when open */
