@@ -16,7 +16,7 @@ const pages = [
       {title: "Valmoor", url: "cities/valmoor.html"},
       // Quests
       {title: "Platinum coin", url: "cities/worldteleport.html"},
-      {title: "Viking helmet", url: "cities/Vroengaard.html"},
+      {title: "Viking helmet", url: "cities/Vroengaard.html#vikinghelmet"},
       {title: "Plate legs", url: "cities/Vroengaard.html"},
       {title: "Dark armor", url: "cities/Vroengaard.html"},
       {title: "Ring of healing", url: "cities/Vroengaard.html"},
