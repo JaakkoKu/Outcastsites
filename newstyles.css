@@ -13,7 +13,6 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    
 }
 html{
     line-height: 1.5rem;
@@ -37,7 +36,7 @@ body{
     grid-template-columns: 3.5em auto 20em;
 }
 #newsidebar{
-    box-sizing: border box;
+    
     height: 100vh;
     width: 340px;
     padding: 5px 1em;
@@ -264,6 +263,22 @@ input[type="text"] {
     
 } 
 .box{
+    
+    padding: 20px;
+    position: flex;
+    border-radius: 5px;
+    max-width: 1000px;
+    height: auto;
+    margin: 10px;
+    justify-content: center;
+    align-items: right;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(158, 21, 21);
+    grid-template-columns: 1fr 1fr auto;
+    justify-self: center;
+}
+/* Quest contents or list as you might say -----------------------------------------*/
+.contents{
     padding: 20px;
     position: flex;
     border-radius: 5px;
@@ -275,7 +290,29 @@ input[type="text"] {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(158, 21, 21);
     grid-template-columns: 1fr auto;
+    text-align: center;
 }
+.contents>h2{
+    color: red;
+}
+.contents > ul, li{
+    list-style: none;
+    
+}
+.contents ul > li > p > a{
+    text-decoration: none;
+    color: green;
+}
+.contents ul > li > p > a:visited{
+    color: red;
+}
+.contents ul > li > p > a:hover{
+    color: blue;
+}
+/* Contents end---------------------------------------- */
+
+/* Mushroom sites ------------------------------------- */
+
 .mushbox{
     padding: 20px;
     position: flex;
@@ -305,6 +342,7 @@ input[type="text"] {
     font-size: 20px;
     
 }
+/* Mushroom sites ------------------------------------- */
 .box p {
     font-size: 20px;
 }
@@ -322,6 +360,21 @@ input[type="text"] {
     grid-template-columns: 1fr auto;
 
 }
+.box3{
+    padding: 20px;
+    position: flex;
+    border-radius: 5px;
+    max-width: 1000px;
+    height: auto;
+    margin: 50px 20px 10px 10px;
+    justify-content: center;
+    align-items: right;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(158, 21, 21);
+    grid-template-columns: 1fr 1fr auto;
+    justify-self: center;
+}
+
 
 .container .newsbox p{
     font-size: 18px;
@@ -337,6 +390,34 @@ input[type="text"] {
     text-decoration: underline;
     color: rgb(228, 110, 14);
 }
+.box summary{
+    list-style: none;
+    
+}
+summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Rotate arrow when open */
+.box details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.box summary>h1{
+    
+    color: rgb(228, 110, 14);
+    font-size: 26px;
+    cursor: pointer;
+}
+.box summary>h1:hover{
+    color: blue;
+    transition: 0.6s;
+
+}
+
 
 .box img, .box1 img{
     max-width: 800px;
@@ -429,7 +510,7 @@ max-height: 1000px;
         margin-left: 30px;
         
     }
-    .newsbox, .box, .box1, .mushbox{
+    .newsbox, .box, .box1, .mushbox, .contents{
         max-width: 220px;
         max-height: auto;
         margin-left: -50px;
