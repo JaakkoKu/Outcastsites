@@ -3,44 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Click Transition</title>
+    <title>Testisivu</title>
+
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        .image-container img {
-            width: 300px;
-            height: auto;
-            cursor: pointer;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            transition: transform 0.4s ease;
-        }
+:root{
+    --base-clr: #11121a;
+    --line-clr: #42434a;
+    --hover-clr:#222533;
+    --text-clr:#e6e6ef;
+    --accent-clr:#5e63ff;
+    --secondary-text-clr:#b0b3c1;
+}
 
-        .image-container img.clicked {
-            transform: scale(1.5); /* Scale the image */
-        }
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+    line-height: 1.5rem;
+    font-family: Poppins, 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto;
+}
+body, h1, p, ul, li{
+    margin: 0;
+    padding:0;
+    font-family: 'Oppins, sans-serif';
+}
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-image: url("screenshots/avatar.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 3.5em auto 20em;
+}
+#sidebar{
+    background-color: black;
+    width: 100%;
+    color: white;
+    width: 6rem;
+    justify-content: space-between;
+}
+.box{
+    position: fixed;
+    border: solid 3px red;
+    width: 50%;
+    justify-self: center;
+    align-content: center;
+    top: 10rem;
+}
     </style>
 </head>
 <body>
 
-<div class="image-container">
-    <img id="myImage" src="https://via.placeholder.com/300" alt="Sample Image">
-</div>
+    <nav id ="sidebar">
+        <ul>
+            <li>Number 1</li>
+            <li>Number 2</li>
+            <li>Number 3</li>
+            <li>Number 4</li>
+            <li>Number 5</li>
+        </ul>
+    </nav>
+    <section class ="box">
+        <h2>Some headings</h2>
+        <p>Some textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome
+             textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome textsSome texts</p>
 
-<script>
-    const img = document.getElementById("myImage");
-
-    img.onclick = () => {
-        img.classList.toggle("clicked"); // Toggle the 'clicked' class on click
-    };
-</script>
-
+    </section>
+    
 </body>
 </html>
