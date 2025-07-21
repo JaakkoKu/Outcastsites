@@ -278,18 +278,18 @@ input[type="text"] {
     grid-template-columns: 1fr 1fr auto;
     justify-self: center;
 }
-.box p {
+.box p, details p {
     font-size: 20px;
 }
-.box, h1, h2{
+.box, h1, h2, details h1,h2{
     text-align: center;
     
 }
-.box> h1,h2,h3{
+.box> h1,h2,h3, details h1,h2,h3{
     color: rgb(228, 110, 14);
 }
 
-.box img, .box1 img{
+.box img, details img{
     max-width: 800px;
     max-height: 800px; 
 }
@@ -298,6 +298,25 @@ input[type="text"] {
     font-weight: 600;
     display: grid;
     justify-items: center; 
+}
+
+details::details-content{
+    
+}
+summary{
+padding-inline: 2rem;
+cursor: pointer;
+}
+summary::marker{
+    content: '>';
+    content: none;
+}
+summary::before{
+    content: '>';
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -0.05rem;
+
 }
 
 /* ----------------------------------------- Contents end---------------------------------------- */
