@@ -300,23 +300,55 @@ input[type="text"] {
     justify-items: center; 
 }
 
-details::details-content{
+/* details::details-content{
     
+} */
+.summarycontainer{
+    padding-right: 100px;
+  padding-left: 100px;
+  width: 100%;
+  min-width: 55%;
+  display: flex;
+  flex-direction: column;
+  margin: 10em;
+    /* max-width: 1000px;
+    height: auto;
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10em; */
+
 }
-summary{
+summary, details{
+position: flex;
 padding-inline: 2rem;
 cursor: pointer;
+background-color: white;
+justify-self: center;
+padding: 10px;
+margin: 10px;
+width: 800px;
+height: auto;
+font-size: 24px;
+font-weight: 700;
 }
 summary::marker{
     content: '>';
     content: none;
+   
 }
 summary::before{
     content: '>';
-    position: absolute;
+    position: flex;
     inset-inline-start: 1rem;
     inset-block-start: -0.05rem;
+    transition: 0.2s;
+}
 
+/* summary::before has to be "position:absolute before this works */
+details[open] summary::before{
+    rotate: 90deg;
+    inset-block-start: 0.05rem;
 }
 
 /* ----------------------------------------- Contents end---------------------------------------- */
@@ -335,6 +367,9 @@ summary::before{
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(158, 21, 21);
     grid-template-columns: 1fr auto;
+}
+.mushheader{
+    background: white;
 }
 .mushbox>hr{
     border: 4px solid rgb(206, 22, 22);

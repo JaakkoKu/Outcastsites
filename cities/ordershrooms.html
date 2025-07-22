@@ -9,10 +9,10 @@
         <script type ="text/javascript" src ="../sidebarfuncs.js" defer></script>
      </head>
      <style> 
-     .container img{
+     .summarycontainer details::content img{
         cursor:pointer;
      }
-     .popup {
+     .popup{
             display: none;
             position: fixed;
             top: 0;
@@ -24,21 +24,21 @@
             align-items: center;
         }
 
-        .popup img {
+        .popup img{
             max-width: 80%;
             max-height: 80%;
             border: 3px solid #fff;
             border-radius: 10px;
         }
 
-        .popup.active {
+        .popup.active{
             display: flex;
         }
-        .container .mushbox .image:hover img{
+        .summarycontainer details .image:hover img{
             transform: scale(1.03);
             transition: 0.3s;
         }
-        .container .popup-image{
+        details .popup-image{
             position: fixed;
             top: 0;
             left: 0;
@@ -49,7 +49,7 @@
             z-index: 100;
             display:none;
         }
-        .container .popup-image span{
+        details .popup-image span{
             position: absolute;
             top: 20px;
             right: 20px;
@@ -59,7 +59,7 @@
             z-index: 100;
             color: white;
         }
-        .container .popup-image img{
+        details .popup-image img{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -72,8 +72,30 @@
         }
        
         @media(max-width: 768px){
-            .container .popup-image img{
+            .summarycontainer .popup-image img{
                 width: 70%;
+            }
+            .summarycontainer h1,h2{
+                font-size: 18px;
+            }
+            .summarycontainer p{
+                font-size: 15px;
+            }
+            .summarycontainer{
+                width: 10%;
+                left: 0;
+                
+            }
+            summary{
+                width: 50%;
+                left: 0;
+            }
+            details{
+                width: 50%;
+                left: 0;
+            }
+            .summarycontainer img{
+                width: 60%;
             }
         }</style>
      <body> 
@@ -287,16 +309,10 @@
    
    </ul>
    </nav>
-        <div class="container">
-            <main>  
-                <div class="mushbox">
-                    <h1>Magic mushrooms of Outcast</h1>
-                    <p>Gen 1: 96/100</p>
-                    <p>Gen 2: 49/50</p>
-                    <p>Gen 3: 40/50</p>
-                    <p>Gen 4: 40/50</p>
+        <div class="summarycontainer">
+ <main>
   <details>
-  <summary><h2 id="gen1">Generation 1</h2></summary>
+  <summary><h2 id="gen1">Generation 1 (96/100)</h2></summary>
   
   <p>1-A Forbidden forest North-west corner</p><br>
                     <img src="../screenshots/shrooms/Forbidden/forbidden2.webp" alt="1-A"><br>
@@ -498,9 +514,10 @@
                     <img src="../screenshots/shrooms/desert/desert.webp" alt=""><br>
  <p>100-A Mysticon, most Northern part of the island</p><br>
                     <img src="../screenshots/shrooms/Unidentified/idk2.webp" alt="100-A"><br>
+                     
 </details>
 <details>
-                   <summary> <h2 id="gen2">Generation 2</h2></summary>
+                   <summary> <h2 id="gen2">Generation 2 (49/50)</h2></summary>
 
 <p>101-B Tarid city, middle arena</p><br>
                     <img src="../screenshots/shrooms/Tarid/tarid1.webp" alt=""><br>
@@ -602,9 +619,10 @@
                     <img src="../screenshots/shrooms/Yalahar/149-B.craaktower.png" alt="149-B"><br>
 <p>150-B Axxion labyrinth</p><br>
                     <img src="../screenshots/shrooms/Bossrun/axxion1.webp" alt="150-B"><br>
+   
 </details>
 <details>
-                    <summary><h2 id="gen3">Generation 3</h2></summary>
+                    <summary><h2 id="gen3">Generation 3 (40/50)</h2></summary>
 
 <p>151-C Beluna hell</p><br>
                     <img src="../screenshots/shrooms/Beluna/151-C.beluna.jpg" alt="151-C"><br>
@@ -689,7 +707,7 @@
 
                     </details>
                     <details>
-                    <summary><h2 id="gen4">Generation 4</h2></summary>
+                    <summary><h2 id="gen4">Generation 4 (40/50)</h2></summary>
 <p>201-D Edron boat</p><br>
                     <img src="../screenshots/shrooms/edron/edronboat.webp" alt="201-D"><br>
 <p>202-D Tarid middle mountain</p><br>
@@ -770,23 +788,19 @@
                     <img src="../screenshots/shrooms/Abyss/248-D.prison.jpg" alt="248-D"><br>
 <p>250-D Drushak demons</p><br>
                     <img src="../screenshots/shrooms/Drushak/250-D (Drushak).png" alt="250-D"><br>
+          
 </details>
                   
-                    </div>
-                    <div class="popup-image">
-                        <span>&times;</span>
-                        <img src="../screenshots/icons/Black_Skull_29.webp" alt="">
-                        
-                    </div>
-            </main>         
-           
-        </div> 
-    
+   
+                    
+                </main>
+    </div>
+
    
     
      <script src ="../searchcity.js"></script>
      <script>
- document.querySelectorAll(".mushbox img").forEach(image => {
+ document.querySelectorAll("details img").forEach(image => {
     image.onclick = () => {
         const popup = document.querySelector('.popup-image');
         const popupImg = popup.querySelector('img');
