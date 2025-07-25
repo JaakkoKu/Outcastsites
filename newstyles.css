@@ -325,6 +325,11 @@ input[type="text"] {
     display: grid;
     justify-items: center; 
 }
+.box hr{
+    background-color: black; 
+    height: 3px; 
+    box-shadow: 2px 1px;
+}
 
 .summarycontainer{
     padding-right: 100px;
