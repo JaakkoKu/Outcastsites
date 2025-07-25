@@ -128,6 +128,17 @@ const pages = [
       {title: "Wrecked ship", url: "../cities/Fallengods/wreckedship.html"},
       {title: "Skyrider waterfalls", url: "../cities/Fallengods/waterfalls.html"},
       {title: "Helarctos area", url: "../cities/Fallengods/helarctos.html"},
+      {title: "Silver brooch quest", url: "../cities/Fallengods/plains.html#silverbrooch"},
+      {title: "Access to Plains of Gold", url: "../cities/Fallengods/plains.html#accessplains"},
+      {title: "Butterfly conservation kit 2 quest", url: "../cities/Fallengods/plains.html#butterfly2"},
+      {title: "Botanist's container 2 quest", url: "../cities/Fallengods/plains.html#botanist2"},
+      {title: "Ice stalagmite quest", url: "../cities/Fallengods/plains.html#icestala"},
+      {title: "Tail of darkness quest", url: "../cities/Fallengods/plains.html#tailofdark"},
+      {title: "Stone herb quest", url: "../cities/Fallengods/plains.html#tailofdark"},
+      {title: "Golden raptor's amulet quest", url: "../cities/Fallengods/plains.html#graptoramulet"},
+      {title: "Cyclip shield quest", url: "../cities/Fallengods/plains.html#roseshield"},
+      {title: "", url: "../cities/Fallengods/plains.html#"},
+      
      
       // Access
       {title: "Access to Kingdom farmlands", url: "../cities/access/abysskfaccess.html"},

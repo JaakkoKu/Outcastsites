@@ -22,7 +22,7 @@ html{
 body, h1, p, ul, li{
     margin: 0;
     padding:0;
-    font-family: 'Oppins, sans-serif';
+    font-family: 'Poppins, sans-serif';
 }
 body{
     min-height: 100vh;
@@ -47,11 +47,16 @@ body{
     top: 0;
     align-self: start;
     transition: 300ms ease-in-out;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
     text-wrap: nowrap;
-    scrollbar-width: thin;
+    -ms-overflow-style: none; /* Hides scrollbar in Edge*/
+    scrollbar-width: none; /*Hides scrollbar in Firefox */
     h4{color: var(--accent-clr);}
 
+}
+#newsidebar::-webkit-scrollbar{
+display: none; /* Hides scrollbar in Chrome, Safari and Opera*/
 }
 #newsidebar.close{
     padding: 5px;
@@ -263,7 +268,28 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
     h2, p{margin-top: 1em};
-} 
+}
+.container a h2{
+    color: blue;
+}
+.container a h2:visited{
+    color: red;
+}
+.container a h2:hover{
+    color: green;
+}
+.container a{
+    font-size: 0.875em;
+    text-decoration: none;
+    color: blue;
+}
+
+.container a:visited{
+    color: red;
+}
+.container a:hover{
+    color: green;
+}
 .box{
     padding: 20px;
     position: flex;
@@ -279,7 +305,7 @@ input[type="text"] {
     justify-self: center;
 }
 .box p, details p {
-    font-size: 20px;
+    font-size: 18px;
 }
 .box, h1, h2, details h1,h2{
     text-align: center;
@@ -294,15 +320,12 @@ input[type="text"] {
     max-height: 800px; 
 }
 .box li{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     display: grid;
     justify-items: center; 
 }
 
-/* details::details-content{
-    
-} */
 .summarycontainer{
     padding-right: 100px;
   padding-left: 100px;
@@ -311,13 +334,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   margin: 10em;
-    /* max-width: 1000px;
-    height: auto;
-    position: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10em; */
-
+   
 }
 summary, details{
 position: flex;
@@ -406,10 +423,10 @@ details[open] summary::before{
 
 }
 .newsbox img{
-    justify-content: center;
-    align-items: center;
+    
     max-width: 500px;
-    max-height: 500px;   
+    max-height: 500px;
+    justify-items: space-between;  
 }
 .newsbox img:hover{
     transform: scale(1.3);
