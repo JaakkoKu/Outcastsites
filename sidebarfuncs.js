@@ -27,7 +27,7 @@ function toggleSubMenu(button){
 }
 
 function setnewsidebarInitialState(){
-    if(window.innerWidth < 768){
+    if(window.innerWidth < 800){
         newsidebar.classList.remove('open');
         newsidebar.classList.add('close');
     }
