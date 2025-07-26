@@ -26,6 +26,13 @@ function toggleSubMenu(button){
     }
 }
 
+function setnewsidebarInitialState(){
+    if(window.innerWidth < 768){
+        newsidebar.classList.remove('open');
+        newsidebar.classList.add('close');
+    }
+}
+
 // Close opened sub-menus if user clicks another sub-menu (but not a link)
 function closeAllSubMenus(){
     Array.from(newsidebar.getElementsByClassName('show')).forEach(ul => {
@@ -49,3 +56,6 @@ newsidebar.addEventListener('click', (event) => {
         event.stopPropagation()
     }
 })
+
+window.addEventListener('load', setnewsidebarInitialState);
+window.addEventListener('resize', setnewsidebarInitialState);
