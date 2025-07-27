@@ -13,213 +13,212 @@
         <header class="header">Wild warrior caves
            
         
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         </header>
-        <nav id="newsidebar" class="open">
-            <!-- -----------------SEARCHBAR---------------- -->
-            <ul class="nav-links">
-               <li>
-                       <span class="logo">Quests of Outcast</span>
-                       <button onclick =toggleSidebar() id="toggle-btn">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
-                       </button>
-                         </li>
-                         <li>
-                           <button onclick =search(this) id ="search-btn">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
-                       </button>
-                            <span class="search-container">
-   
-                           <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
-                           <div id="suggestions" class="suggestions"></div>
-                         </li>
-                         <li class ="active">
-                           <a href="../index">
-                               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-                               <span>Home</span>
-                           </a>
-                         </li>
-                       <li class ="active">
-                       
-          <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-           <h4>MC</h4>
-           <span>Main city</span>
-           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          </button>
-           <ul class="sub-menu">
-               <div>
-               <li><a href="Vroengaard">Vroengaard</a></li>
-               <li><a href="Wildwarriorcave">Wild warrior cave</a></li>
-               <li><a href="worldteleport">World teleport</a></li>
-           </div>
-           </ul>
-           </li>       
-           <li class ="active">
-               
-           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-               <h4>CI</h4>
-           <span>Other cities</span>
-           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-           </button>
-           <ul class="sub-menu">
-               <div>
-               <li><a href="/cities/Aberon">Aberon</a></li>
-               <li><a href="/cities/adicama">Adicama</a></li>
-               <li><a href="/cities/drushak">Drushak</a></li>
-               <li><a href="/cities/edron">Edron/Qutor's grove</a></li>
-               <li><a href="/cities/forbidden">Forbidden forest</a></li>
-               <li><a href="/cities/fendal">Fendal</a></li>
-               <li><a href="/cities/Lithgow">Lithgow</a></li>
-               <li><a href="/cities/Snowmania">Snowmania</a></li>
-               <li><a href="/cities/tarid">Tarid</a></li>
-               <li><a href="/cities/valmoor">Valmoor</a></li>
-           </div>
-       </ul>
-   </li>
-           <li class ="active"> 
-           <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-               <h4>FG</h4>
-           <span>Fallen Gods area</span>
-           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-           </button>
-           <ul class="sub-menu">
-               <div>
-              <!-- <li><a href="..//cities/Fallengods/mainarea">Main area</a></li> -->
-               <li><a href="/cities/Fallengods/plains">Plains of Gold</a></li>
-               <li><a href="/cities/Fallengods/helarctos">Helarctos area</a></li>
-               <li><a href="/cities/Fallengods/mysticon">Mysticon</a></li>
-               <li><a href="/cities/Fallengods/wreckedship">Wrecked ship</a></li>
-               <li><a href="/cities/Fallengods/waterfalls">Skyrider waterfalls</a></li>
-           </div>
+    
+            <nav id="newsidebar" class="open">
+         <!-- -----------------SEARCHBAR---------------- -->
+         <ul class="nav-links">
+            <li>
+                    <span class="logo">Quests of Outcast</span>
+                    <button onclick =toggleSidebar() id="toggle-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                    </button>
+                      </li>
+                      <li>
+                        <button onclick =search(this) id ="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                    </button>
+                         <span class="search-container">
+
+                        <input type="text" id="search-bar" placeholder="Search..." autocomplete="off">
+                        <div id="suggestions" class="suggestions"></div>
+                      </li>
+                      <li class ="active">
+                        <a href=".././index">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                            <span>Home</span>
+                        </a>
+                      </li>
+                    <li class ="active">
+                    
+       <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+        <h4>MC</h4>
+        <span>Main city</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+       </button>
+        <ul class="sub-menu">
+            <div>
+            <li><a href="./Vroengaard">Vroengaard</a></li>
+            <li><a href="./Wildwarriorcave">Wild warrior cave</a></li>
+            <li><a href="./worldteleport">World teleport</a></li>
+        </div>
         </ul>
-       </li>
-           <li>
-               <li class ="active">
-               
-                   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-                       <h4>EB</h4>
-                   <span>Edron bossrun</span>
-                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                   </button>
-           <ul class="sub-menu">
-               <div>
-               <li><a href="/cities/Bossrun/spaceshipkey">Spaceship key</a></li>
-               <li><a href="/cities/Bossrun/axxion">Underworld Axxion</a></li>
-               <li><a href="/cities/Bossrun/beluna">Beluna</a></li>
-               <li><a href="/cities/Bossrun/desert">Desert of Zenith</a></li>
-               <li><a href="/cities/Bossrun/yalahar">Yalahar</a></li>
-           </div>
-               
-   
-          </ul>
-           </li>
-           <li class ="active">
-               
-               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-                   <h4>KF</h4>
-               <span>Kingdom farmlands</span>
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-               </button>
-           <ul class="sub-menu">
-               <div>
-               <li><a href="/cities/kf/kingdom1">Kingdom farmlands part 1</a></li>
-               <li><a href="/cities/kf/kingdom2">Kingdom farmlands part 2</a></li>
-               <li><a href="/cities/kf/kingdom3">Kingdom farmlands part 3</a></li>
-               <li><a href="/cities/kf/ebr3">Edron bossrun 3</a></li>
-           </div>
-           </ul>
-           </li>
-           <li class ="active">
-               
-               <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-                   <h4>AB</h4>
-               <span>Abysses of Achernar</span>
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-               </button>
-           <ul class="sub-menu">
-           <div>
-               <li><a href="/cities/abyss/abyss1">Yalahar abbyses of Achernar 1</a></li>
-               <li><a href="/cities/abyss/abyss2">Yalahar abbyses of Achernar 2</a></li>
-               <li><a href="/cities/abyss/abyss3">Yalahar abbyses of Achernar 3</a></li>
-               <li><a href="/cities/abyss/spacewalk">Spacewalk</a></li>
-               <li><a href="/cities/abyss/prison">Prison of Achernar</a></li>
-           </div>
-        </ul>
-   </li>
-   <li class ="active">
-               
-   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-       <h4>SE</h4>
-   <span>Set upgrades</span>
-   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-   </button>
-   <ul class="sub-menu">
-   <div>
-   <li><a href="/cities/setupgrades/darkwarrior">Dark warrior set</a></li>
-   <li><a href="/cities/setupgrades/zenith">Zenith set</a></li>
-   <li><a href="/cities/setupgrades/draconian">Draconian set</a></li>
-   <li><a href="/cities/setupgrades/fallen">Fallen gods set</a></li>
-   <li><a href="/cities/setupgrades/hela">Helarctos set</a></li>
-   <li><a href="/cities/setupgrades/overlord">Dark overlord set</a></li>
-   <li><a href="/cities/setupgrades/cyclip">Cyclip set</a></li>
-   </div>
-   </ul>
-   </li>
-   <li class ="active">
-               
-   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-       <h4>WP</h4>
-   <span>Weapon & shield upgrades</span>
-   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-   </button>
-   <ul class="sub-menu">
-   <div>
-   <li><a href ="/cities/other/fullhota">Full helmet of the ancients</a></li>
-<li><a href="/cities/other/endy">Endymion&Archmage wand upgrade</a></li>
-   <li><a href="/cities/other/skywep">Oceanic lizard weapon</a></li>
-   <li><a href="/cities/other/cycshield">Tusk, Rose or Honour shield</a></li>
-   <li><a href="/cities/other/ocshield">Cyclip shield</a></li>
-   <li><a href ="/cities/other/skyshield">Oceanic lizard shield</a></li>
-   </div>
-   </ul>
-   </li>
-   <li class ="active">
-               
-   <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-       <h4>AC</h4>
-   <span>Access quests</span>
-   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-   </button>
-   <ul class="sub-menu">
-   <div>
-   <li><a href ="/cities/access/abysskfaccess">Yalahar abysses & Farmlands</a></li>
-   <li><a href ="/cities/access/farmpitsaccess">Farmpits</a></li>
-   <li><a href ="/cities/access/realmaccess">Hitchhiker realms</a></li>
-   <li><a href ="/cities/access/spaceshipaccess">Yalahar spaceship</a></li>
-   <li><a href ="/cities/access/dunesaccess">Dunes of Darkness</a></li>
-   <li><a href="/cities/access/draconianopen">Fallen gods bamboo walls</a></li>
-   </div>
-   </ul>
-   </li>
-   
-   <li class ="active">
-               
-    <button onclick= toggleSubMenu(this) class ="dropdown-btn">
-        <h4>OT</h4>
-    <span>Other</span>
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-    </button>
-    <ul class="sub-menu">
-    <div>
-    <li><a href ="/cities/shrooms">Mushrooms by city</a></li>
-    <li><a href="/cities/ordershrooms">Mushrooms by number</a></li>
-    <li><a href="/cities/scopes">Hitchhiker scopes</a></li>
-    <li><a href="/cities/talismans">Electric talismans</a></li></a></li>
-    </div>
+        </li>       
+        <li class ="active">
+            
+        <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+            <h4>CI</h4>
+        <span>Other cities</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+            <div>
+            <li><a href="./Aberon">Aberon</a></li>
+            <li><a href=".//adicama">Adicama</a></li>
+            <li><a href="./drushak">Drushak</a></li>
+            <li><a href="./edron">Edron/Qutor's grove</a></li>
+            <li><a href="./forbidden">Forbidden forest</a></li>
+            <li><a href="./fendal">Fendal</a></li>
+            <li><a href="./Lithgow">Lithgow</a></li>
+            <li><a href="./Snowmania">Snowmania</a></li>
+            <li><a href="./tarid">Tarid</a></li>
+            <li><a href="./valmoor">Valmoor</a></li>
+        </div>
     </ul>
+</li>
+        <li class ="active"> 
+        <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+            <h4>FG</h4>
+        <span>Fallen Gods area</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+            <div>
+           <!-- <li><a href=".././Fallengods/mainarea">Main area</a></li> -->
+            <li><a href="./Fallengods/plains">Plains of Gold</a></li>
+            <li><a href="./Fallengods/helarctos">Helarctos area</a></li>
+            <li><a href="./Fallengods/mysticon">Mysticon</a></li>
+            <li><a href="./Fallengods/wreckedship">Wrecked ship</a></li>
+            <li><a href="./Fallengods/waterfalls">Skyrider waterfalls</a></li>
+        </div>
+     </ul>
     </li>
-   
+        <li>
+            <li class ="active">
+            
+                <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                    <h4>EB</h4>
+                <span>Edron bossrun</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                </button>
+        <ul class="sub-menu">
+            <div>
+            <li><a href="./Bossrun/spaceshipkey">Spaceship key</a></li>
+            <li><a href="./Bossrun/axxion">Underworld Axxion</a></li>
+            <li><a href="./Bossrun/beluna">Beluna</a></li>
+            <li><a href="./Bossrun/desert">Desert of Zenith</a></li>
+            <li><a href="./Bossrun/yalahar">Yalahar</a></li>
+        </div>
+            
+
+       </ul>
+        </li>
+        <li class ="active">
+            
+            <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                <h4>KF</h4>
+            <span>Kingdom farmlands</span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+            </button>
+        <ul class="sub-menu">
+            <div>
+            <li><a href="./kf/kingdom1">Kingdom farmlands part 1</a></li>
+            <li><a href="./kf/kingdom2">Kingdom farmlands part 2</a></li>
+            <li><a href="./kf/kingdom3">Kingdom farmlands part 3</a></li>
+               <li><a href="./kf/ebr3">Edron bossrun 3</a></li>
+        </div>
+        </ul>
+        </li>
+        <li class ="active">
+            
+            <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+                <h4>AB</h4>
+            <span>Abysses of Achernar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+            </button>
+        <ul class="sub-menu">
+        <div>
+            <li><a href="./abyss/abyss1">Yalahar abbyses of Achernar 1</a></li>
+            <li><a href="./abyss/abyss2">Yalahar abbyses of Achernar 2</a></li>
+            <li><a href="./abyss/abyss3">Yalahar abbyses of Achernar 3</a></li>
+            <li><a href="./abyss/spacewalk">Spacewalk</a></li>
+            <li><a href="./abyss/prison">Prison of Achernar</a></li>
+        </div>
+     </ul>
+</li>
+<li class ="active">
+            
+<button onclick= toggleSubMenu(this) class ="dropdown-btn">
+    <h4>SE</h4>
+<span>Set upgrades</span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+</button>
+<ul class="sub-menu">
+<div>
+<li><a href="./setupgrades/darkwarrior">Dark warrior set</a></li>
+<li><a href="./setupgrades/zenith">Zenith set</a></li>
+<li><a href="./setupgrades/draconian">Draconian set</a></li>
+<li><a href="./setupgrades/fallen">Fallen gods set</a></li>
+<li><a href="./setupgrades/hela">Helarctos set</a></li>
+<li><a href="./setupgrades/overlord">Dark overlord set</a></li>
+<li><a href="./setupgrades/cyclip">Cyclip set</a></li>
+</div>
 </ul>
+</li>
+<li class ="active">
+            
+<button onclick= toggleSubMenu(this) class ="dropdown-btn">
+    <h4>WP</h4>
+<span>Weapon & shield upgrades</span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+</button>
+<ul class="sub-menu">
+<div>
+<li><a href ="./other/fullhota">Full helmet of the ancients</a></li>
+<li><a href="./other/endy">Endymion&Archmage wand upgrade</a></li>
+<li><a href="./other/endy">Endymion&Archmage wand upgrade</a></li>
+<li><a href="./other/skywep">Oceanic lizard weapon</a></li>
+<li><a href="./other/cycshield">Tusk, Rose or Honour shield</a></li>
+<li><a href="./other/ocshield">Cyclip shield</a></li>
+<li><a href ="./other/skyshield">Oceanic lizard shield</a></li>
+</div>
+</ul>
+</li>
+<li class ="active">
+            
+<button onclick= toggleSubMenu(this) class ="dropdown-btn">
+    <h4>AC</h4>
+<span>Access quests</span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+</button>
+<ul class="sub-menu">
+<div>
+<li><a href ="./access/abysskfaccess">Yalahar abysses & Farmlands</a></li>
+<li><a href ="./access/farmpitsaccess">Farmpits</a></li>
+<li><a href ="./access/realmaccess">Hitchhiker realms</a></li>
+<li><a href ="./access/spaceshipaccess">Yalahar spaceship</a></li>
+<li><a href ="./access/dunesaccess">Dunes of Darkness</a></li>
+   <li><a href="./access/draconianopen">Fallen gods bamboo walls</a></li>
+</div>
+</ul>
+</li>
+<li class ="active">
+            
+ <button onclick= toggleSubMenu(this) class ="dropdown-btn">
+     <h4>OT</h4>
+ <span>Other</span>
+ <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+ </button>
+ <ul class="sub-menu">
+ <div>
+ <li><a href ="./shrooms">Mushrooms by city</a></li>
+ <li><a href="./ordershrooms">Mushrooms by number</a></li>
+ <li><a href="./scopes">Hitchhiker scopes</a></li>
+    <li><a href="./talismans">Electric talismans</a></li>
+ 
+ </div>
+ </ul>
 </nav>
         <div class="container">
             <main>  
