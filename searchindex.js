@@ -15,7 +15,7 @@ const pages = [
       {title: "Tarid", url: "cities/tarid.html"},
       {title: "Valmoor", url: "cities/valmoor.html"},
       // Quests
-      {title: "Platinum coin", url: "cities/worldteleport.html#pcoin"},
+      {title: "Platinum coin", url: "cities/worldteleport#pcoin"},
       {title: "Viking helmet", url: "cities/Vroengaard.html#vikinghelmet"},
       {title: "Plate legs", url: "cities/Vroengaard.html#noobquest"},
       {title: "Dark armor", url: "cities/Vroengaard.html#noobquest"},
