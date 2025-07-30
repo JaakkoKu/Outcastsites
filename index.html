@@ -9,36 +9,7 @@
         <link rel = "stylesheet" href="newstyles.css">
         <script type ="text/javascript" src ="sidebarfuncs.js" defer></script>
 
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  
-  authDomain: "mysitetracker-a6fed.firebaseapp.com",
-  projectId: "mysitetracker-a6fed",
-  storageBucket: "mysitetracker-a6fed.firebasestorage.app",
-  messagingSenderId: "395081535250",
-  appId: "1:395081535250:web:bbeb7248389377af70edcb",
-  measurementId: "G-SGBSPLGK8R"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-const page = location.pathname;
-  await addDoc(collection(db, "visits"), {
-    page: page,
-    timestamp: serverTimestamp()
-  });
-        </script>
+        
      </head>
      <body> 
         
@@ -251,7 +222,7 @@ const page = location.pathname;
  
 </ul>
 </nav>
-<div class="container">
+<div class="news-container">
     
     <div class="newsbox">
         <h1>Outcast Open-Tibia 7.6 - The Ultimate Wiki</h1><br>
