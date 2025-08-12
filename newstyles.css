@@ -400,6 +400,9 @@ input[type="text"] {
   margin: 10em;
    
 }
+details img{
+    border: solid 3px green;
+}
 summary, details{
 position: flex;
 padding-inline: 2rem;
@@ -407,11 +410,15 @@ cursor: pointer;
 background-color: white;
 justify-self: center;
 padding: 10px;
-margin: 10px;
+background-color: brown;
+margin: auto;
 width: 800px;
 height: auto;
 font-size: 24px;
 font-weight: 700;
+border-radius: 10px;
+color: white;
+box-shadow: 1px 2px 5px black;
 }
 summary::marker{
     content: '>';
@@ -428,9 +435,10 @@ summary::before{
 
 /* summary::before has to be "position:absolute before this works */
 details[open] summary::before{
-    rotate: 90deg;
-    inset-block-start: 0.05rem;
+    margin: 10px;
+    background-color: green;
 }
+
 
 /* ----------------------------------------- Contents end---------------------------------------- */
 
@@ -533,16 +541,13 @@ details[open] summary::before{
         background-color: red;
         font-size: 13px;
     }
-    main{
-        padding: 2em 1em 60px 1em;
-    }
    .newsbox a img{
         width:1.3em;
         height:1.3em;
         margin-left: 30px;
         
     }
-    .box, .box1, .mushbox, .contents{
+    .box, .box1, .mushbox, .contents, .summarycontainer, summary, details{
         max-width: 250px;
         max-height: auto;
         margin-left: -50px;
@@ -554,14 +559,14 @@ details[open] summary::before{
     .box a, .box1 a{
         font-size: 15px;
     }
-    .newsbox p, .box p,.mushbox p{
+    .newsbox p, .box p,.mushbox p, .summarycontainer p{
         font-size: 12px;
     }
     .box img, .box1 img, .mushbox img{
         max-width: 220px;
         max-height: 240px;
     }
-    .newsbox h1,h2,h3,.box h3,h2,h1, .mushbox h1,h2,h3{
+    .newsbox h1,h2,h3,.box h3,h2,h1, .mushbox h1,h2,h3, .summarycontainer h2,h3,h1{
         font-size: 18px;
     }
     .container, .news-container{
@@ -596,6 +601,13 @@ details[open] summary::before{
     .container .popup-image img{
                 width: 70%;
     }
-        
+    summary, details{
+        max-width: 60vw;
+        margin: auto;
+    }
+    details img{
+        max-width: 11em;
+        max-height: 11em;
+    }
 
 }
