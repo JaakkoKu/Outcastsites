@@ -517,11 +517,7 @@ details[open] summary::before{
 
 /*-------------------------------------------------- Media stuff for phones ----------------------------------- */
 
-@media (max-width: 1550px){
-    .container{
-        
-    }
-}
+
 
 @media (max-width: 800px){
     body{
