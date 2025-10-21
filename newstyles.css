@@ -535,7 +535,7 @@ details[open] summary::before{
 
 @media (max-width: 800px){
     body{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         background-size: 100% 100%;
     }
     .header {
@@ -562,6 +562,7 @@ details[open] summary::before{
     .container{
         padding: 1em;
         margin: 1em auto;
+        width: auto;
     }
     .newsbox{
         max-width: 15.7em;
