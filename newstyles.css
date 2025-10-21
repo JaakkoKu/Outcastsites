@@ -32,7 +32,7 @@ body{
     background-size: 100% 100%;
     overflow: hidden;
     display:grid;
-    grid-template-columns: 3.5em auto 20em;
+    grid-template-columns: 340px 1fr;
 }
 
 /* ------------------ POPUP ------------------- */
@@ -320,13 +320,18 @@ input[type="text"] {
 /* ---------------------------------------------------^^ SEARCHBAR ^^------------------------------------------------ */
 
 .container{
-    display: -webkit-inline-flex;
-    padding: 15px 15px 15px 250px;
+    display: flex;
+    grid-column: 2;
+    padding: 2em;
     border-radius: 1em;
-    margin: 2em 1em 0 6em;
+    width: calc(100vw - 340px);
+    
+    margin: 2em auto;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     h2, p{margin-top: 1em};
+    
 }
 .container a h2{
     color: blue;
@@ -354,6 +359,7 @@ input[type="text"] {
     position: flex;
     border-radius: 5px;
     max-width: 1000px;
+    width: 100%;
     height: auto;
     margin: auto;
     justify-content: center;
@@ -548,9 +554,14 @@ details[open] summary::before{
         
     }
     .box, .box1, .mushbox, .contents, .summarycontainer, summary, details{
-        max-width: 250px;
+        width: 95%;
+        padding: 15px;
         max-height: auto;
         margin-left: -50px;
+    }
+    .container{
+        padding: 1em;
+        margin: 1em auto;
     }
     .newsbox{
         max-width: 15.7em;
@@ -563,8 +574,12 @@ details[open] summary::before{
         font-size: 12px;
     }
     .box img, .box1 img, .mushbox img{
-        max-width: 220px;
-        max-height: 240px;
+        
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
     .newsbox h1,h2,h3,.box h3,h2,h1, .mushbox h1,h2,h3, .summarycontainer h2,h3,h1{
         font-size: 18px;
