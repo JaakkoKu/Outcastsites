@@ -33,6 +33,12 @@ function setnewsidebarInitialState(){
         newsidebar.classList.remove('open');
         newsidebar.classList.add('close');
     }
+    document.addEventListener('click', (e) => {
+        if(!newsidebar.contains(e.target) && !toggleButton.contains(e.target)){
+            newsidebar.classList.toggle('open')
+            toggleButton.classList.toggle('rotate')
+        }
+    })
 }
 
 // Close opened sub-menus if user clicks another sub-menu (but not a link)
