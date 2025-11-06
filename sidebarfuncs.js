@@ -22,7 +22,7 @@ function toggleSubMenu(button){
 
     if(newsidebar.classList.contains('close')){
         if(document.activeElement !== search){
-        newsidebar.classList.toggle('close')
+        newsidebar.classList.toggle('open')
         toggleButton.classList.toggle('rotate')
     }
     }
