@@ -1,3 +1,4 @@
+// Variables
 const toggleButton = document.getElementById('toggle-btn')
 const newsidebar = document.getElementById('newsidebar')
 
@@ -21,25 +22,25 @@ function toggleSubMenu(button){
     button.classList.toggle('rotate')
 
     if(newsidebar.classList.contains('close')){
-        if(document.activeElement !== search){
         newsidebar.classList.toggle('open')
         toggleButton.classList.toggle('rotate')
     }
-    }
 }
 
+// Close sidebar when clicking outside of it, but only on smaller screens
 function setnewsidebarInitialState(){
     if(window.innerWidth < 800){
         newsidebar.classList.remove('open');
         newsidebar.classList.add('close');
     }
-    document.addEventListener('click', (e) => {
-        if(!newsidebar.contains(e.target) && !toggleButton.contains(e.target)){
-            newsidebar.classList.toggle('open')
-            toggleButton.classList.toggle('rotate')
-        }
-    })
 }
+
+// Add click listener to close sidebar when clicking outside - only once
+document.addEventListener('click', (e) => {
+    if(!newsidebar.contains(e.target) && !toggleButton.contains(e.target)){
+        newsidebar.classList.toggle('open')
+    }
+})
 
 // Close opened sub-menus if user clicks another sub-menu (but not a link)
 function closeAllSubMenus(){
@@ -60,7 +61,7 @@ function search(button){
 
 // Prevent sidebar and sub-menu from closing when clicking links
 newsidebar.addEventListener('click', (event) => {
-    if (event.target.tagName === 'a') {
+    if (event.target.tagName === 'A') {
         event.stopPropagation()
     }
 })
