@@ -13,6 +13,7 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 html{
     line-height: 1.5rem;
@@ -27,7 +28,7 @@ html{
 body, h1, p, ul, li{
     margin: 0;
     padding:0;
-    font-family: 'Poppins, sans-serif';
+    font-family: 'Poppins', sans-serif;
 }
 body{
     min-height: 100vh;
@@ -38,6 +39,12 @@ body{
     overflow: hidden;
     display:grid;
     grid-template-columns: 340px 1fr;
+}
+
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ------------------ POPUP ------------------- */
@@ -128,7 +135,7 @@ display: none; /* Hides scrollbar in Chrome, Safari and Opera*/
 #newsidebar.close{
     padding: 5px;
     width: 42px;
-    
+    position: sticky;
 }
 #newsidebar li{
     list-style: none;
@@ -142,13 +149,16 @@ display: none; /* Hides scrollbar in Chrome, Safari and Opera*/
         
     }
 }
-#newsidebar {ul li.active a{
+.menu_icon_box{
+    display: none;
+}
+#newsidebar ul li.active a{
     color: var(--accent-clr);
     svg{
         fill: var(--accent-clr);
     }
 }
-}
+
 #newsidebar a,#newsidebar .dropdown-btn, #newsidebar .logo{
     border-radius: .5em;
     padding: .85em;
@@ -171,7 +181,7 @@ display: none; /* Hides scrollbar in Chrome, Safari and Opera*/
     fill: var(--text-clr);
 
 }
-#newsidebar a span, #snewidebar .dropdown-btn span{
+#newsidebar a span, #newsidebar .dropdown-btn span{
     flex-grow: 1;
 }
 #newsidebar a:hover, #newsidebar .dropdown-btn:hover{
@@ -215,6 +225,38 @@ display: none; /* Hides scrollbar in Chrome, Safari and Opera*/
 
     svg{
         transition: rotate 150ms ease;
+    }
+}
+
+@media (max-width: 800px) {
+    #toggle-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    
+    #toggle-btn svg {
+        display: none;
+    }
+    
+    #toggle-btn::before,
+    #toggle-btn::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 3px;
+        background-color: var(--text-clr);
+        transition: 300ms ease-in-out;
+    }
+    
+    #toggle-btn::before {
+        box-shadow: 0 10px 0 var(--text-clr);
     }
 }
 #toggle-btn:hover{
@@ -334,7 +376,7 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    h2, p{margin-top: 1em};
+    h2, p{margin-top: 1em}
 }
 .container a h2{
     color: blue;
@@ -501,6 +543,8 @@ details[open] summary::before{
     font-size: 20px;
     
 }
+
+
 /* ------------------------------------ ^^ Mushroom sites ^^ ------------------------------------- */
 
 /*----------------------------------------- Front page ------------------------------------------- */
@@ -510,8 +554,6 @@ details[open] summary::before{
     justify-content: center;
     align-items: center;
     margin: auto;
-    
-    
 }
 .newsbox{
     padding: 20px;
@@ -524,8 +566,6 @@ details[open] summary::before{
     align-items: center;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(158, 21, 21);
-    
-
 }
 .newsbox img{
     max-width: 500px;
@@ -556,11 +596,13 @@ details[open] summary::before{
 @media (max-width: 800px){
     body{
         background-size: 100% 100%;
+        width: 100dvw;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .header {
-        font-size: 1em;
-        padding: 8px;
-        margin-left: 3px;
+        display: none;
     }
     #developing{
         background-color: red;
@@ -573,8 +615,11 @@ details[open] summary::before{
         
     }
     .box, .box1, .mushbox, .contents{
-        max-width: 800px;
-        min-width: 250px;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        margin: 0;
+        border-radius: 0;
     }
     .summarycontainer{
        max-width: 800px;
@@ -596,23 +641,28 @@ details[open] summary::before{
         grid-column: 1 / -1;
         display: flex;
         place-items: center;
-        min-height: 100vh;
-        padding: 1em;
-        margin: auto; 
+        width: 100dvw;
+        min-height: 100dvh;
+        padding: 0;
+        margin: 0;
     }
     .newsbox{
-        max-width: 270px;
         width: 100%;
-        max-height: 100vh;
-        margin-left: 20%;
+        max-width: none;
+        min-height: 100dvh;
+        margin: 0;
+        border-radius: 0;
 
     }
+    #newsidebar > ul > li:first-child{.logo{display: none;}}
+    
      .news-container{
         display: grid;
         place-items: center;
-        min-height: 100vh;
-        padding: 1em;
-        margin: auto; 
+          width: 100dvw;
+          min-height: 100dvh;
+          padding: 0;
+          margin: 0;
     }
     .box a, .box1 a{
         font-size: 15px;
@@ -630,28 +680,25 @@ details[open] summary::before{
     .box h1, .box h2, .box h3, .newsbox h1,h2,h3,.box h3,h2,h1, .mushbox h1,h2,h3, .summarycontainer h2,h3,h1{
         font-size: 16px;
     }
-  
     #toggle-btn{
-        margin-left: auto;
-        padding: 1em;
-        border: none;
-        display:block;
-        border-radius: .5em;
-        background: none;
-        cursor: pointer;
-        svg{
-            transition: rotate 150ms ease;
-        }
+        display:none;
     }
     #newsidebar{
-        height: 100%;
-        width: 100vw;
+        height: 100dvh;
+        width: 100dvw;
         border-top: 1px solid var(--line-clr);
-        border-right: none;
-        position: fixed;
-        padding: 0 10px 0 0;
+        border-right: 1px solid var(--line-clr);
+        position: absolute;
+        padding: 5px 1em;
+        top: 0;
         left: 0;
-        z-index: 2000;
+        z-index: 999;
+        transition: transform 300ms ease-in-out;
+        transform: translateX(-100%);
+    }
+    
+    #newsidebar.open {
+        transform: translateX(0);
     }
      
     .container .popup-image img{
@@ -665,5 +712,45 @@ details[open] summary::before{
         max-width: 11em;
         max-height: 11em;
     }
+    /*------------------------ Hampparimenu ---------------------*/
+    .menu_icon_box{
+    z-index: 2000;
+    display: block;
+    width: fit-content;
+    height: auto;
+    background-color: var(--accent-clr);
+    margin: 30px;
+    position: fixed;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.line1, .line2{
+    width: 40px;
+    height: 4px;
+    margin: 10px 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    transition: 0.2s;
+    
+}
+.line3{
+    width: 40px;
+    height: 4px;
+    margin: 10px 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    transition: 0.6s;
+}
+.open .line1{
+    transform: translate(0px , 15px)rotate(45deg);
+}
+.open .line2{
+    transform: translateX(10000px) rotate(1000deg);
+    transition: 2s;
+    opacity: 0;
+}
+.open .line3{
+    transform: translate(0px,-15px)rotate(-45deg);
+}
 
 }
