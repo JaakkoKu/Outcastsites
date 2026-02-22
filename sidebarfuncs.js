@@ -86,10 +86,6 @@ function closeAllSubMenus(){
 // Searchbar functions
 function search(button){
     button.nextElementSibling.classList.toggle('show')
-    if(newsidebar.classList.contains('close')){
-        newsidebar.classList.toggle('close')
-        toggleButton.classList.toggle('rotate')
-    }
 }
 
 // Prevent sidebar and sub-menu from closing when clicking links
