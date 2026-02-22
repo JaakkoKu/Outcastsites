@@ -3,6 +3,7 @@ const toggleButton = document.getElementById('toggle-btn')
 const newsidebar = document.getElementById('newsidebar')
 let hamburgerToggleBtn = document.querySelector('.menu_icon_box')
 
+// if the screen is smaller than 800px, return it as a mobile view
 function isMobileView(){
     return window.innerWidth < 800
 }
@@ -43,12 +44,12 @@ function toggleSubMenu(button){
 // Close sidebar when clicking outside of it, but only on smaller screens
 function setnewsidebarInitialState(){
     if(isMobileView()){
-        newsidebar.classList.add('open');
-        hamburgerToggleBtn.classList.add('open');
-        newsidebar.classList.remove('close');
+        newsidebar.classList.add('close');
+        hamburgerToggleBtn.classList.add('close');
+        newsidebar.classList.remove('open');
     } else {
-        newsidebar.classList.remove('open')
-        hamburgerToggleBtn.classList.remove('open')
+        newsidebar.classList.remove('close')
+        hamburgerToggleBtn.classList.remove('close')
     }
 }
 

@@ -671,8 +671,8 @@ details[open] summary::before{
         font-size: 12px;
     }
     .box img, .box1 img, .mushbox img{
-        width: 100%;
-        max-width: 800px;
+        max-width: 100%;
+        max-width: 600px;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -699,6 +699,7 @@ details[open] summary::before{
     
     #newsidebar.open {
         transform: translateX(0);
+        position: fixed;
     }
      
     .container .popup-image img{
