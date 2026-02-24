@@ -648,7 +648,7 @@ details[open] summary::before{
         display: block;
         position: absolute;
         top: 0;
-        bottom: auto;
+        bottom: 0;
     }
     .news-container{
         display: flex;
@@ -709,8 +709,8 @@ details[open] summary::before{
     }
     
     .box img, .box1 img, .mushbox img{
-        max-width: 600px;
-        height: auto;
+        max-width: 70dvw;
+        height: 40dvh;
         display: block;
         margin: 0 auto;
     }

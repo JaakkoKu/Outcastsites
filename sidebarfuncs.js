@@ -47,6 +47,7 @@ function setnewsidebarInitialState(){
         newsidebar.classList.add('close');
         hamburgerToggleBtn.classList.add('close');
         newsidebar.classList.remove('open');
+        hamburgerToggleBtn.classList.remove('open');
     } else {
         newsidebar.classList.remove('close')
         hamburgerToggleBtn.classList.remove('close')
@@ -60,13 +61,16 @@ hamburgerToggleBtn.onclick = function(){
     hamburgerToggleBtn.classList.toggle('open')
     newsidebar.classList.toggle('open')
     newsidebar.classList.remove('close')
+    hamburgerToggleBtn.classList.remove('close')
+    if (hamburgerToggleBtn.classList.contains ('open')){
+    newsidebar.classList.add('open');
+    newsidebar.classList.remove('close');
+}else{
+    newsidebar.classList.toggle('close');
+    hamburgerToggleBtn.classList.toggle('close');
 }
-// if (hamburgerToggleBtn.classList.contains ('open')){
-//     newsidebar.classList.add('open');
-// }else{
-//     newsidebar.classList.toggle('close');
-//     hamburgerToggleBtn.classList.toggle('close');
-// }
+}
+
 document.addEventListener('click', (e) => {
     if (!isMobileView()) {
         return
@@ -89,10 +93,10 @@ function search(button, event){
         event.stopPropagation()
     }
     button.nextElementSibling.classList.toggle('show')
-    // if(newsidebar.classList.contains('close')){
-    //     newsidebar.classList.toggle('close')
-    //     toggleButton.classList.toggle('rotate')
-    // }
+    if(!newsidebar.classList.contains('open')){
+        newsidebar.classList.toggle('open')
+        toggleButton.classList.toggle('rotate')
+    }
 }
 
 // Prevent sidebar and sub-menu from closing when clicking links
