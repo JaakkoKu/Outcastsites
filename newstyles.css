@@ -41,11 +41,11 @@ body{
     grid-template-columns: 340px 1fr;
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     body {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 /* ------------------ POPUP ------------------- */
 .container img{
@@ -595,6 +595,7 @@ details[open] summary::before{
 
 @media (max-width: 800px){
     body{
+        grid-template-columns: 1fr;
         background-size: 100% 100%;
         width: 100dvw;
         min-height: 100dvh;
@@ -612,21 +613,20 @@ details[open] summary::before{
     summary{
         font-size: 1rem;
         padding: 0.8rem 1rem;
-        max-width: 100%;
+         max-width: 75vw;
+        margin: auto;
     }
     details{
-        width: 100%;
+        
         border-radius: 10px;
+        max-width: 75vw;
+        margin: auto;
     }
     summary::before{
         left: 0.8rem;
     }
     .container .popup-image img{
         width: 70%;
-    }
-    summary, details{
-        max-width: 75vw;
-        margin: auto;
     }
     details img{
         max-width: 70vw;
@@ -741,6 +741,13 @@ details[open] summary::before{
         display:none;
     }
     #newsidebar > ul > li:first-child{.logo{display: none;}}
+    .search-container #search-bar{
+        width: 100%;
+        position: relative;
+    }
+    #search-btn{
+        visibility: hidden;
+    }
      /* ------------------------------ Sidebar ---------------------- */
     /*-------------------------------- Hampparimenu ---------------------*/
     .menu_icon_box{
@@ -755,16 +762,15 @@ details[open] summary::before{
     cursor: pointer;
 }
 .line1, .line2{
-    width: 40px;
+    width: 30px;
     height: 4px;
     margin: 10px 8px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     transition: 0.2s;
-    
 }
 .line3{
-    width: 40px;
+    width: 30px;
     height: 4px;
     margin: 10px 8px;
     background-color: rgb(255, 255, 255);
@@ -772,7 +778,8 @@ details[open] summary::before{
     transition: 0.6s;
 }
 .open .line1{
-    transform: translate(0px , 15px)rotate(45deg);
+    transform: translate(0px,15px)rotate(45deg);
+    
 }
 .open .line2{
     transform: translateX(10000px) rotate(1000deg);
