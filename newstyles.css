@@ -640,7 +640,6 @@ details[open] summary::before{
         margin: 3px;
     }
     /* ------------------------------- Mushroom sites ------------------------------------- */
-
     /* ------------------News box and contents------------------------ */
 
     .newsbox{
@@ -713,7 +712,7 @@ details[open] summary::before{
     
     .box img, .box1 img, .mushbox img{
         max-width: 70dvw;
-        height: 40dvh;
+        max-height: 40dvh;
         display: block;
         margin: 0 auto;
     }
