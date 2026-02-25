@@ -129,4 +129,4 @@ newsidebar.addEventListener('click', (event) => {
 })
 
 window.addEventListener('load', setnewsidebarInitialState)
-window.addEventListener('resize', setnewsidebarInitialState)
+// window.addEventListener('resize', setnewsidebarInitialState)

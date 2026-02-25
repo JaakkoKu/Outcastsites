@@ -738,7 +738,6 @@ details[open] summary::before{
     
     #newsidebar.open {
         transform: translateX(0);
-        position: fixed;
     }
     #toggle-btn{
         display:none;
@@ -746,7 +745,7 @@ details[open] summary::before{
     #newsidebar > ul > li:first-child{.logo{display: none;}}
     .search-container #search-bar{
         width: 100%;
-        position: relative;
+        position: fixed;
     }
     #search-btn{
         visibility: hidden;
