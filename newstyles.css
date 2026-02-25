@@ -727,7 +727,7 @@ details[open] summary::before{
         width: 100dvw;
         border-top: 1px solid var(--line-clr);
         border-right: 1px solid var(--line-clr);
-        position: absolute;
+        position: fixed;
         padding: 5px 1em;
         top: 0;
         left: 0;
