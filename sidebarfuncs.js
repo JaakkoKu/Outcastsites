@@ -1,37 +1,46 @@
-// Variables
+// =============================
+// Element references
+// =============================
 const toggleButton = document.getElementById('toggle-btn')
 const newsidebar = document.getElementById('newsidebar')
 let hamburgerToggleBtn = document.querySelector('.menu_icon_box')
+// const searchBar = document.getElementById('search-container')
 
-// if the screen is smaller than 800px, return it as a mobile view
+// =============================
+// Shared utilities
+// =============================
 function isMobileView(){
     return window.innerWidth < 800
 }
 
-function closeMobileSidebar(){
-    newsidebar.classList.remove('open')
-    hamburgerToggleBtn.classList.remove('open')
+function closeAllSubMenus(){
+    Array.from(newsidebar.getElementsByClassName('show')).forEach(ul => {
+        ul.classList.remove('show')
+        ul.previousElementSibling.classList.remove('rotate')
+    })
 }
 
-// Sidebar is closed from the beginning
+// =============================
+// Desktop sidebar functions
+// =============================
 function toggleSidebar(event){
-    // Prevent closing if clicking a link
     if (event && event.target.tagName === 'A') {
         return
     }
     if (isMobileView()) {
         return
     }
+
     newsidebar.classList.toggle('close')
     toggleButton.classList.toggle('rotate')
     closeAllSubMenus()
 }
 
-// As you toggle the sidebar arrows, it opens the sidebar
 function toggleSubMenu(button){
     if(!button.nextElementSibling.classList.contains('show')) {
         closeAllSubMenus()
     }
+
     button.nextElementSibling.classList.toggle('show')
     button.classList.toggle('rotate')
 
@@ -41,57 +50,64 @@ function toggleSubMenu(button){
     }
 }
 
-// Close sidebar when clicking outside of it, but only on smaller screens
+// =============================
+// Mobile sidebar functions
+// =============================
+function closeMobileSidebar(){
+    newsidebar.classList.remove('open')
+    hamburgerToggleBtn.classList.remove('open')
+}
+
 function setnewsidebarInitialState(){
     if(isMobileView()){
-        newsidebar.classList.add('close');
-        hamburgerToggleBtn.classList.add('close');
-        newsidebar.classList.remove('open');
-        hamburgerToggleBtn.classList.remove('open');
+        newsidebar.classList.add('close')
+        hamburgerToggleBtn.classList.add('close')
+        newsidebar.classList.remove('open')
+        hamburgerToggleBtn.classList.remove('open')
     } else {
         newsidebar.classList.remove('close')
         hamburgerToggleBtn.classList.remove('close')
     }
 }
-
-hamburgerToggleBtn.onclick = function(){
+// toggle hamburger menu to open and remove close class to show the sidebar
+function handleMobileHamburgerClick(){
     if (!isMobileView()) {
         return
     }
+
     hamburgerToggleBtn.classList.toggle('open')
     newsidebar.classList.toggle('open')
     newsidebar.classList.remove('close')
     hamburgerToggleBtn.classList.remove('close')
-    if (hamburgerToggleBtn.classList.contains ('open')){
-    newsidebar.classList.add('open');
-    newsidebar.classList.remove('close');
-}else{
-    newsidebar.classList.toggle('close');
-    hamburgerToggleBtn.classList.toggle('close');
-}
+// If hamburger menu is open, add open class for sidebar and remove close class. Otherwise toggle both to close
+    if (hamburgerToggleBtn.classList.contains('open')) {
+        newsidebar.classList.add('open')
+        newsidebar.classList.remove('close')
+    } else {
+        newsidebar.classList.toggle('close')
+        hamburgerToggleBtn.classList.toggle('close')
+    }
 }
 
-document.addEventListener('click', (e) => {
+function handleMobileOutsideClick(event){
     if (!isMobileView()) {
         return
     }
-    if (!hamburgerToggleBtn.contains(e.target) && !newsidebar.contains(e.target)) {
+
+    if (!hamburgerToggleBtn.contains(event.target) && !newsidebar.contains(event.target) && !event.target.classList.contains('search-btn')) {
         closeMobileSidebar()
     }
-})
-// Close opened sub-menus if user clicks another sub-menu (but not a link)
-function closeAllSubMenus(){
-    Array.from(newsidebar.getElementsByClassName('show')).forEach(ul => {
-        ul.classList.remove('show')
-        ul.previousElementSibling.classList.remove('rotate')
-    })
 }
 
-// Searchbar functions
+// =============================
+// Search functions
+// =============================
 function search(button, event){
     if (event) {
+        
         event.stopPropagation()
     }
+
     button.nextElementSibling.classList.toggle('show')
     if(!newsidebar.classList.contains('open')){
         newsidebar.classList.toggle('open')
@@ -99,12 +115,18 @@ function search(button, event){
     }
 }
 
-// Prevent sidebar and sub-menu from closing when clicking links
+// =============================
+// Event bindings
+// =============================
+hamburgerToggleBtn.onclick = handleMobileHamburgerClick
+
+document.addEventListener('click', handleMobileOutsideClick)
+
 newsidebar.addEventListener('click', (event) => {
     if (event.target.tagName === 'A') {
         event.stopPropagation()
     }
 })
 
-window.addEventListener('load', setnewsidebarInitialState);
-window.addEventListener('resize', setnewsidebarInitialState);
+window.addEventListener('load', setnewsidebarInitialState)
+window.addEventListener('resize', setnewsidebarInitialState)

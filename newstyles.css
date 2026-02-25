@@ -337,7 +337,9 @@ input[type="text"] {
     width: 100%;
     max-width: 250px;
     background-color: rgb(227, 226, 226);
-    
+}
+.search-container #search-bar{
+        position: relative;
 }
 ::placeholder{
     color: rgb(0, 0, 0);
@@ -363,6 +365,7 @@ input[type="text"] {
 }
 .suggestions div:hover, .suggestions .active{
     background-color: rgb(181, 181, 181);
+    position: relative;
 }
 /* ---------------------------------------------------^^ SEARCHBAR ^^------------------------------------------------ */
 
