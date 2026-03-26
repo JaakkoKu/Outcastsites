@@ -145,7 +145,7 @@ const pages = [
     {title: "Access to spaceship", url: "../../cities/access/spaceshipaccess"},
     {title: "Access to farmpits", url: "../../cities/access/farmpitsaccess"},
     {title: "Access to Realms", url: "../../cities/access/realmaccess"},
-    {title: "Access to Realms", url: "../cities/access/realmaccess"},
+    
    
     // Yalahar abysses
     {title: "Yalahar abysses of achernar part 1", url: "../../cities/abyss/abyss1"},
