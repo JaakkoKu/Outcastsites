@@ -17,7 +17,7 @@ The goal of this project is to make commonly searched Outcast information easier
 ## Live site
 
 **Website:**
-Website: https://jaakkoku.github.io/Outcastsites/
+https://jaakkoku.github.io/Outcastsites/
 
 ## Features
 
