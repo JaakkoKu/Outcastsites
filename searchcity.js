@@ -186,9 +186,10 @@ const pages = [
       {title: "Oceanic lizard shield quest", url: "../cities/other/ocshield"},
       {title: "Skyrider shield quest", url: "../cities/other/skyshield"},
       {title: "Hitchhiker scopes", url: "../cities/other/scopes"},
-      {title: "Hitchhiker realms", url: "../cities/other/realmaccess"},
-      {title: "Edron Bossrun 4", url: "../cities/other/realmaccess"},
-      {title: "Edron bossrun 3", url: "../cities/kf/ebr3"}
+      {title: "Hitchhiker realms", url: "../cities/access/realmaccess"},
+      {title: "Edron Bossrun 4", url: "../cities/access/realmaccess"},
+      {title: "Edron bossrun 3", url: "../cities/kf/ebr3"},
+      {title: "Electric talismans", url:"../cities/talismans"}
    ];
   
   

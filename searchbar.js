@@ -145,6 +145,7 @@ const pages = [
     {title: "Access to spaceship", url: "../../cities/access/spaceshipaccess"},
     {title: "Access to farmpits", url: "../../cities/access/farmpitsaccess"},
     {title: "Access to Realms", url: "../../cities/access/realmaccess"},
+    {title: "Access to Realms", url: "../cities/access/realmaccess"},
    
     // Yalahar abysses
     {title: "Yalahar abysses of achernar part 1", url: "../../cities/abyss/abyss1"},
@@ -164,6 +165,7 @@ const pages = [
     {title: "Desert of zenith", url: "../../cities/Bossrun/desert"},
     {title: "Yalahar", url: "../../cities/Bossrun/yalahar"},
     {title: "Yalahar cirlces", url: "../../cities/Bossrun/yalahar"},
+    {title: "Way to Edron Bossrun", url: "../cities/Bossrun/axxion"},
    
     // {title: "Yalahar spaceship", url: "../../cities/spaceship"},
     //Set upgrades
@@ -181,7 +183,11 @@ const pages = [
     {title: "Oceanic lizard weapon to skyrider weapon", url: "../../cities/other/skywep"},
     {title: "Cyclip shield quest", url: "../../cities/other/cycshield"},
     {title: "Oceanic lizard shield quest", url: "../../cities/other/ocshield"},
-    {title: "Skyrider shield quest", url: "../../cities/other/skyshield"}
+    {title: "Skyrider shield quest", url: "../../cities/other/skyshield"},
+    {title: "Hitchhiker realms", url: "../../cities/access/realmaccess"},
+      {title: "Edron Bossrun 4", url: "../../cities/access/realmaccess"},
+      {title: "Edron bossrun 3", url: "../../cities/kf/ebr3"},
+      {title: "Electric talismans", url:"../../cities/talismans"}
  ];
 
 

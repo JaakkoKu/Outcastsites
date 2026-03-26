@@ -105,7 +105,8 @@ body{
             transform: translate(-50%, -50%);
             border: 5px solid white;
             border-radius: 5px;
-            width: 75%;
+            max-width: 70dvw;
+            max-height: 70dvh;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
@@ -629,11 +630,11 @@ details[open] summary::before{
         left: 0.8rem;
     }
     .container .popup-image img{
-        width: 70%;
+        width: 70dvw;
     }
     details img{
-        max-width: 70vw;
-        max-height: 70vh;
+        max-width: 70dvw;
+        max-height: 70dvh;
     }
     .mushbox p, .summarycontainer p{
         font-size: 14px;
