@@ -165,7 +165,7 @@ const pages = [
     {title: "Desert of zenith", url: "../../cities/Bossrun/desert"},
     {title: "Yalahar", url: "../../cities/Bossrun/yalahar"},
     {title: "Yalahar cirlces", url: "../../cities/Bossrun/yalahar"},
-    {title: "Way to Edron Bossrun", url: "../cities/Bossrun/axxion"},
+    {title: "Way to Edron Bossrun", url: "../../cities/Bossrun/axxion"},
    
     // {title: "Yalahar spaceship", url: "../../cities/spaceship"},
     //Set upgrades
