@@ -173,6 +173,7 @@ const pages = [
       {title: "Desert of zenith", url: "cities/Bossrun/desert"},
       {title: "Yalahar", url: "cities/Bossrun/yalahar"},
       {title: "Yalahar cirlces", url: "cities/Bossrun/yalahar"},
+      {title: "Way to Edron Bossrun", url: "cities/Bossrun/axxion"},
    
       // {title: "Yalahar spaceship", url: "cities/spaceship"},
       //Set upgrades
@@ -190,7 +191,10 @@ const pages = [
       {title: "Oceanic lizard weapon to skyrider weapon", url: "cities/other/skywep"},
       {title: "Cyclip shield quest", url: "cities/other/cycshield"},
       {title: "Oceanic lizard shield quest", url: "cities/other/ocshield"},
-      {title: "Skyrider shield quest", url: "cities/other/skyshield"}
+      {title: "Skyrider shield quest", url: "cities/other/skyshield"},
+      {title: "Hitchhiker realms", url: "cities/other/realmaccess"},
+      {title: "Edron Bossrun 4", url: "cities/other/realmaccess"},
+      {title: "Edron bossrun 3", url: "cities/kf/ebr3"}
    ];
   
   
